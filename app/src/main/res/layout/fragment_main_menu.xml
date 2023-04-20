@@ -1,14 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainMenu">
+    style="@style/layout_style">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/textView3"
+        style="@style/title_view_style"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/Button_Holder"
+        style="@style/main_menu_row_style"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+        <LinearLayout
+            style="@style/main_menu_row_style">
+            <LinearLayout
+                style="@style/main_menu_button_style"
+                >
+                <ImageButton
+                    android:id="@+id/main_menu_button_one"
+                   style="@style/main_menu_image_button_style"
+                    android:src="@drawable/mr_krabs_paradise"/>
+                <TextView
+                   style="@style/main_menu_button_text_view_style"
+                    android:text="@string/easy_budget"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/main_menu_button_style">
+                <ImageButton
+                    android:id="@+id/main_menu_button_two"
+                    android:src="@drawable/homework_planner_icon"
+                    style="@style/main_menu_image_button_style"/>
+                <TextView
+                    style="@style/main_menu_button_text_view_style"
+                    android:text="@string/homework_planner" />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/main_menu_button_style">
+                <ImageButton
+                    android:id="@+id/main_menu_button_three"
+                    android:src="@drawable/fitness_tracker_icon"
+                    style="@style/main_menu_image_button_style"/>
+                <TextView
+                    style="@style/main_menu_button_text_view_style"
+                    android:text="@string/fitness_tracker"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/main_menu_row_style">
+            <LinearLayout
+                style="@style/main_menu_button_style">
+                <ImageButton
+                    android:id="@+id/main_menu_button_four"
+                    android:src="@drawable/happy_quotes_icon"
+                    style="@style/main_menu_image_button_style"/>
+                <TextView
+                    style="@style/main_menu_button_text_view_style"
+                    android:text="@string/positive_quotes"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/main_menu_button_style">
+                <ImageButton
+                    android:id="@+id/main_menu_button_five"
+                    android:src="@drawable/ic_baseline_menu_book_24"
+                    style="@style/main_menu_image_button_style"/>
+                <TextView
+                    style="@style/main_menu_button_text_view_style"
+                    android:text="Reading \nList"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

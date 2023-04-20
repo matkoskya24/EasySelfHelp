@@ -5,4 +5,7 @@
     <dimen name="home_screen_icon_width">300dp</dimen>
     <dimen name="home_scren_icon_height">280dp</dimen>
     <dimen name="universal_text_size">24sp</dimen>
+    <dimen name="main_menu_image_button_dimen">90dp</dimen>
+    <dimen name="main_menu_button_text_size">20sp</dimen>
+    <dimen name="main_menu_button_margin">20dp</dimen>
 </resources>

@@ -3,8 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/drawable/fitness_tracker_icon.xml" value="0.232" />
+        <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/drawable/happy_quotes_icon.xml" value="0.232" />
+        <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/drawable/homework_planner_icon.xml" value="0.232" />
+        <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/drawable/ic_baseline_menu_book_24.xml" value="0.232" />
+        <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/drawable/mr_krabs_paradise.xml" value="0.232" />
         <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/layout/activity_main.xml" value="0.26875" />
         <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/layout/fragment_home_screen.xml" value="0.26875" />
+        <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/layout/fragment_main_menu.xml" value="0.27291666666666664" />
       </map>
     </option>
   </component>
