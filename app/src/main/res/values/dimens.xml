@@ -8,4 +8,7 @@
     <dimen name="main_menu_image_button_dimen">90dp</dimen>
     <dimen name="main_menu_button_text_size">20sp</dimen>
     <dimen name="main_menu_button_margin">20dp</dimen>
+    <dimen name="dev_icon_dimen">70dp</dimen>
+    <dimen name="recycler_view_margin_bottom">100dp</dimen>
+    <dimen name="add_item_text_view_text_size">35sp</dimen>
 </resources>

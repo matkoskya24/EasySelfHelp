@@ -54,4 +54,21 @@
         <item name="android:textAlignment">center</item>
         <item name="android:textColor">@color/space_cadet</item>
     </style>
+    <style name="recycler_view_style" parent="TextAppearance.AppCompat">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_marginBottom">@dimen/recycler_view_margin_bottom</item>
+    </style>
+    <style name="add_item_text_view" parent="TextAppearance.AppCompat">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/add_item_text_view_text_size</item>
+        <item name="fontFamily">@font/baloo</item>
+    </style>
+    <style name="add_item_image_button" parent="TextAppearance.AppCompat">
+        <item name="android:layout_height">@dimen/recycler_view_margin_bottom</item>
+        <item name="android:layout_width">@dimen/recycler_view_margin_bottom</item>
+        <item name="android:backgroundTint">@color/desert_sand</item>
+        <item name="android:src">@drawable/add_item_image_asset</item>
+    </style>
 </resources>

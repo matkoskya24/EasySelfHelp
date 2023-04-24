@@ -18,5 +18,59 @@
         android:id="@+id/mainMenu"
         android:name="com.example.easyselfhelp.MainMenu"
         android:label="fragment_main_menu"
-        tools:layout="@layout/fragment_main_menu" />
+        tools:layout="@layout/fragment_main_menu" >
+        <action
+            android:id="@+id/action_mainMenu_to_budget_fragment"
+            app:destination="@id/budget_fragment" />
+        <action
+            android:id="@+id/action_mainMenu_to_fitnessTrackerFragment"
+            app:destination="@id/fitnessTrackerFragment" />
+        <action
+            android:id="@+id/action_mainMenu_to_homework_planner_fragment"
+            app:destination="@id/homework_planner_fragment" />
+        <action
+            android:id="@+id/action_mainMenu_to_quotesFragment"
+            app:destination="@id/quotesFragment" />
+        <action
+            android:id="@+id/action_mainMenu_to_readingListFragment"
+            app:destination="@id/readingListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/budget_fragment"
+        android:name="com.example.easyselfhelp.budget_fragment"
+        android:label="fragment_budget_fragment"
+        tools:layout="@layout/fragment_budget_fragment" >
+        <action
+            android:id="@+id/action_budget_fragment_to_addBudgetItemFragment"
+            app:destination="@id/addBudgetItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fitnessTrackerFragment"
+        android:name="com.example.easyselfhelp.fitnessTrackerFragment"
+        android:label="fragment_fitness_tracker"
+        tools:layout="@layout/fragment_fitness_tracker" />
+    <fragment
+        android:id="@+id/homework_planner_fragment"
+        android:name="com.example.easyselfhelp.homework_planner_fragment"
+        android:label="fragment_homework_planner_fragment"
+        tools:layout="@layout/fragment_homework_planner_fragment" />
+    <fragment
+        android:id="@+id/quotesFragment"
+        android:name="com.example.easyselfhelp.QuotesFragment"
+        android:label="fragment_quotes"
+        tools:layout="@layout/fragment_quotes" />
+    <fragment
+        android:id="@+id/readingListFragment"
+        android:name="com.example.easyselfhelp.ReadingListFragment"
+        android:label="fragment_reading_list"
+        tools:layout="@layout/fragment_reading_list" />
+    <fragment
+        android:id="@+id/addBudgetItemFragment"
+        android:name="com.example.easyselfhelp.AddBudgetItemFragment"
+        android:label="fragment_add_budget_item"
+        tools:layout="@layout/fragment_add_budget_item" >
+        <action
+            android:id="@+id/action_addBudgetItemFragment_to_budget_fragment"
+            app:destination="@id/budget_fragment" />
+    </fragment>
 </navigation>

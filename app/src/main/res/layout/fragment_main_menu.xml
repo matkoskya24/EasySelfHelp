@@ -7,9 +7,30 @@
     <TextView
         android:id="@+id/textView3"
         style="@style/title_view_style"
+        android:text="Main Menu"
+        android:textColor="@color/space_cadet"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/heart_icon_home_screen"
+        app:layout_constraintBottom_toTopOf="@+id/Button_Holder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        style="@style/main_menu_button_text_view_style"
+        android:layout_marginBottom="1dp"
+        android:text="@string/nothing_good_ever_comes_easily"
+        app:layout_constraintBottom_toTopOf="@+id/Button_Holder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
     <LinearLayout
         android:id="@+id/Button_Holder"
         style="@style/main_menu_row_style"
@@ -18,63 +39,84 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3">
-        <LinearLayout
-            style="@style/main_menu_row_style">
-            <LinearLayout
-                style="@style/main_menu_button_style"
-                >
+        <LinearLayout style="@style/main_menu_row_style">
+            <LinearLayout style="@style/main_menu_button_style">
                 <ImageButton
                     android:id="@+id/main_menu_button_one"
-                   style="@style/main_menu_image_button_style"
-                    android:src="@drawable/mr_krabs_paradise"/>
+                    style="@style/main_menu_image_button_style"
+                    android:src="@drawable/mr_krabs_paradise" />
                 <TextView
-                   style="@style/main_menu_button_text_view_style"
-                    android:text="@string/easy_budget"/>
+                    style="@style/main_menu_button_text_view_style"
+                    android:text="@string/easy_budget" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/main_menu_button_style">
+            <LinearLayout style="@style/main_menu_button_style">
                 <ImageButton
                     android:id="@+id/main_menu_button_two"
-                    android:src="@drawable/homework_planner_icon"
-                    style="@style/main_menu_image_button_style"/>
+                    style="@style/main_menu_image_button_style"
+                    android:src="@drawable/homework_planner_icon" />
                 <TextView
                     style="@style/main_menu_button_text_view_style"
                     android:text="@string/homework_planner" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/main_menu_button_style">
+            <LinearLayout style="@style/main_menu_button_style">
                 <ImageButton
                     android:id="@+id/main_menu_button_three"
-                    android:src="@drawable/fitness_tracker_icon"
-                    style="@style/main_menu_image_button_style"/>
+                    style="@style/main_menu_image_button_style"
+                    android:src="@drawable/fitness_tracker_icon" />
                 <TextView
                     style="@style/main_menu_button_text_view_style"
-                    android:text="@string/fitness_tracker"/>
+                    android:text="@string/fitness_tracker" />
             </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-            style="@style/main_menu_row_style">
-            <LinearLayout
-                style="@style/main_menu_button_style">
+        <LinearLayout style="@style/main_menu_row_style">
+            <LinearLayout style="@style/main_menu_button_style">
                 <ImageButton
                     android:id="@+id/main_menu_button_four"
-                    android:src="@drawable/happy_quotes_icon"
-                    style="@style/main_menu_image_button_style"/>
+                    style="@style/main_menu_image_button_style"
+                    android:src="@drawable/happy_quotes_icon" />
                 <TextView
                     style="@style/main_menu_button_text_view_style"
-                    android:text="@string/positive_quotes"/>
+                    android:text="@string/positive_quotes" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/main_menu_button_style">
+            <LinearLayout style="@style/main_menu_button_style">
                 <ImageButton
                     android:id="@+id/main_menu_button_five"
-                    android:src="@drawable/ic_baseline_menu_book_24"
-                    style="@style/main_menu_image_button_style"/>
+                    style="@style/main_menu_image_button_style"
+                    android:src="@drawable/ic_baseline_menu_book_24" />
                 <TextView
                     style="@style/main_menu_button_text_view_style"
-                    android:text="Reading \nList"/>
+                    android:text="@string/reading_list" />
+            </LinearLayout>
+            <LinearLayout style="@style/main_menu_button_style">
+                <ImageButton
+                    android:id="@+id/main_menu_button_six"
+                    style="@style/main_menu_image_button_style"
+                    android:src="@drawable/ic_baseline_ondemand_video_24" />
+                <TextView
+                    style="@style/main_menu_button_text_view_style"
+                    android:text="@string/self_help_videos" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        style="@style/main_menu_image_button_style"
+        android:layout_width="@dimen/dev_icon_dimen"
+        android:layout_height="@dimen/dev_icon_dimen"
+        android:src="@drawable/developer_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Button_Holder" />
+
+    <TextView
+        style="@style/main_menu_button_text_view_style"
+        android:text="@string/meet_the_developer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

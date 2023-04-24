@@ -8,4 +8,9 @@
     <string name="homework_planner">Homework \nPlanner</string>
     <string name="fitness_tracker">Fitness Tracker</string>
     <string name="positive_quotes">Positive \nQuotes</string>
+    <string name="reading_list">Reading \nList</string>
+    <string name="self_help_videos">Self-Help Videos</string>
+    <string name="nothing_good_ever_comes_easily">Nothing Good Ever Comes Easily</string>
+    <string name="meet_the_developer">Meet The Developer</string>
+    <string name="add_budget_item">Add Budget Item</string>
 </resources>
