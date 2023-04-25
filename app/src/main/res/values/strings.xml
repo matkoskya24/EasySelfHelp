@@ -13,4 +13,8 @@
     <string name="nothing_good_ever_comes_easily">Nothing Good Ever Comes Easily</string>
     <string name="meet_the_developer">Meet The Developer</string>
     <string name="add_budget_item">Add Budget Item</string>
+    <string name="fitness_menu">Fitness Menu</string>
+    <string name="add_homework">Add Homework Item</string>
+    <string name="track_your_progress">Track Your Progress</string>
+    <string name="create_workout">Create Workout</string>
 </resources>

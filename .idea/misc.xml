@@ -11,9 +11,18 @@
         <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/drawable/ic_baseline_menu_book_24.xml" value="0.232" />
         <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/drawable/mr_krabs_paradise.xml" value="0.232" />
         <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/layout/activity_main.xml" value="0.26875" />
+        <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/layout/fragment_add_budget_item.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/layout/fragment_add_fitness_result.xml" value="0.25885416666666666" />
+        <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/layout/fragment_add_homework_item.xml" value="0.25885416666666666" />
+        <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/layout/fragment_add_workout.xml" value="0.25885416666666666" />
         <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/layout/fragment_budget_fragment.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/layout/fragment_fitness_menu.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/layout/fragment_fitness_tracker.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/layout/fragment_home_screen.xml" value="0.26875" />
+        <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/layout/fragment_homework_planner_fragment.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/layout/fragment_main_menu.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/layout/fragment_workout_creator.xml" value="0.25885416666666666" />
+        <entry key="..\:/Users/matkoskya24/AndroidStudioProjects/EasySelfHelp/app/src/main/res/layout/fragment_workout_progress.xml" value="0.27291666666666664" />
       </map>
     </option>
   </component>
