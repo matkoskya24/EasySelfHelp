@@ -42,7 +42,7 @@
         <LinearLayout style="@style/main_menu_row_style">
             <LinearLayout style="@style/main_menu_button_style">
                 <ImageButton
-                    android:id="@+id/main_menu_button_one"
+                    android:id="@+id/easy_budget_button"
                     style="@style/main_menu_image_button_style"
                     android:src="@drawable/mr_krabs_paradise" />
                 <TextView
@@ -51,7 +51,7 @@
             </LinearLayout>
             <LinearLayout style="@style/main_menu_button_style">
                 <ImageButton
-                    android:id="@+id/main_menu_button_two"
+                    android:id="@+id/homework_planner_button"
                     style="@style/main_menu_image_button_style"
                     android:src="@drawable/homework_planner_icon" />
                 <TextView
@@ -60,7 +60,7 @@
             </LinearLayout>
             <LinearLayout style="@style/main_menu_button_style">
                 <ImageButton
-                    android:id="@+id/main_menu_button_three"
+                    android:id="@+id/fitness_tracker_button"
                     style="@style/main_menu_image_button_style"
                     android:src="@drawable/fitness_tracker_icon" />
                 <TextView
@@ -71,7 +71,7 @@
         <LinearLayout style="@style/main_menu_row_style">
             <LinearLayout style="@style/main_menu_button_style">
                 <ImageButton
-                    android:id="@+id/main_menu_button_four"
+                    android:id="@+id/positive_quotes_button"
                     style="@style/main_menu_image_button_style"
                     android:src="@drawable/happy_quotes_icon" />
                 <TextView
@@ -80,7 +80,7 @@
             </LinearLayout>
             <LinearLayout style="@style/main_menu_button_style">
                 <ImageButton
-                    android:id="@+id/main_menu_button_five"
+                    android:id="@+id/reading_list_button"
                     style="@style/main_menu_image_button_style"
                     android:src="@drawable/ic_baseline_menu_book_24" />
                 <TextView
@@ -89,7 +89,7 @@
             </LinearLayout>
             <LinearLayout style="@style/main_menu_button_style">
                 <ImageButton
-                    android:id="@+id/main_menu_button_six"
+                    android:id="@+id/self_help_video_button"
                     style="@style/main_menu_image_button_style"
                     android:src="@drawable/ic_baseline_ondemand_video_24" />
                 <TextView

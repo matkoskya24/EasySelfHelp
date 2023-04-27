@@ -1,4 +1,4 @@
 package com.example.easyselfhelp
 
-class BudgetItem(category: String, amount: Double, isRecurring: Boolean, isCompleted: Boolean) {
+class BudgetItem(val name: String, val category: String, val amount: Double, var isCompleted: Boolean) {
 }
