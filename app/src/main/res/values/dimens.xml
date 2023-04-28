@@ -16,4 +16,6 @@
     <dimen name="budget_recycler_text_size_one">20sp</dimen>
     <dimen name="budget_recycler_text_size_two">18sp</dimen>
     <dimen name="delete_button_dimen">50dp</dimen>
+    <dimen name="budget_title_text_size">35sp</dimen>
+    <dimen name="edit_text_height">40dp</dimen>
 </resources>

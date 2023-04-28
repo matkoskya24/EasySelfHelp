@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    style="@style/layout_style"
+    android:backgroundTint="@color/money_green"
     tools:context=".AddBudgetItemFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/textView6"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/adamina"
+        android:text="@string/add_new_budget_item"
+        android:textAlignment="center"
+        android:textColor="@color/gold"
+        android:textSize="@dimen/budget_title_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/item_name_edit_text"
+        style="@style/edit_text_style"
+        android:hint="@string/enter_item_name_hint"
+        app:layout_constraintBottom_toTopOf="@+id/budget_amount_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <EditText
+        android:id="@+id/budget_amount_edit_text"
+        style="@style/edit_text_style"
+        android:hint="@string/enter_amount_hint"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/budget_category_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_name_edit_text" />
+
+    <EditText
+        android:id="@+id/budget_category_edit_text"
+        style="@style/edit_text_style"
+        android:hint="@string/enter_category_hint"
+        app:layout_constraintBottom_toTopOf="@+id/submit_budget_item_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/budget_amount_edit_text" />
+
+    <Button
+        android:id="@+id/submit_budget_item_button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/gold"
+        android:fontFamily="@font/adamina"
+        android:text="@string/submit_budget_item_button_text"
+        android:textColor="@color/money_green"
+        android:textSize="@dimen/budget_recycler_text_size_one"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/budget_category_edit_text" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

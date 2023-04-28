@@ -20,9 +20,6 @@
         android:label="fragment_main_menu"
         tools:layout="@layout/fragment_main_menu" >
         <action
-            android:id="@+id/action_mainMenu_to_budget_fragment"
-            app:destination="@id/budget_fragment" />
-        <action
             android:id="@+id/action_mainMenu_to_homework_planner_fragment"
             app:destination="@id/homework_planner_fragment" />
         <action
@@ -34,15 +31,9 @@
         <action
             android:id="@+id/action_mainMenu_to_fitnessMenuFragment"
             app:destination="@id/fitnessMenuFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/budget_fragment"
-        android:name="com.example.easyselfhelp.budget_fragment"
-        android:label="fragment_budget_fragment"
-        tools:layout="@layout/fragment_budget_fragment" >
         <action
-            android:id="@+id/action_budget_fragment_to_addBudgetItemFragment"
-            app:destination="@id/addBudgetItemFragment" />
+            android:id="@+id/action_mainMenu_to_budgetFragment"
+            app:destination="@id/budgetFragment" />
     </fragment>
     <fragment
         android:id="@+id/homework_planner_fragment"
@@ -69,8 +60,8 @@
         android:label="fragment_add_budget_item"
         tools:layout="@layout/fragment_add_budget_item" >
         <action
-            android:id="@+id/action_addBudgetItemFragment_to_budget_fragment"
-            app:destination="@id/budget_fragment" />
+            android:id="@+id/action_addBudgetItemFragment_to_budgetFragment"
+            app:destination="@id/budgetFragment" />
     </fragment>
     <fragment
         android:id="@+id/addHomeworkItemFragment"
@@ -128,5 +119,13 @@
         <action
             android:id="@+id/action_addFitnessResultFragment_to_fitnessTrackerFragment"
             app:destination="@id/fitnessTrackerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/budgetFragment"
+        android:name="com.example.easyselfhelp.BudgetFragment"
+        android:label="BudgetFragment" >
+        <action
+            android:id="@+id/action_budgetFragment_to_addBudgetItemFragment"
+            app:destination="@id/addBudgetItemFragment" />
     </fragment>
 </navigation>

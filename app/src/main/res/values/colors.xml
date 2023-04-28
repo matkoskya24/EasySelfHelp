@@ -12,5 +12,9 @@
     <color name="money_green">#306C2E</color>
     <color name="red">#EA2121</color>
     <color name="gold">#FFAE00</color>
+    <color name="grey">#A3A0A0</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
 
 </resources>

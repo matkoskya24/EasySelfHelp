@@ -17,4 +17,9 @@
     <string name="add_homework">Add Homework Item</string>
     <string name="track_your_progress">Track Your Progress</string>
     <string name="create_workout">Create Workout</string>
+    <string name="add_new_budget_item">Add New Budget Item</string>
+    <string name="enter_item_name_hint">Enter Item Name</string>
+    <string name="enter_amount_hint">Enter Amount</string>
+    <string name="enter_category_hint">Enter Category</string>
+    <string name="submit_budget_item_button_text">SUBMIT BUDGET ITEM</string>
 </resources>
