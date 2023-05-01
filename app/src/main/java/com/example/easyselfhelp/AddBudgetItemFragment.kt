@@ -21,8 +21,10 @@ class AddBudgetItemFragment : Fragment() {
         _binding = FragmentAddBudgetItemBinding.inflate(inflater, container, false)
         val rootView = binding.root
         binding.submitBudgetItemButton.setOnClickListener {
-            val newBudgetItem = BudgetItem(binding.itemNameEditText.text.toString(), binding.budgetCategoryEditText.text.toString(), binding.budgetAmountEditText.text.toString().toDouble(), false)
-            setFragmentResult("requestKey", bundleOf("bundleKey" to newBudgetItem))
+            val name = binding.itemNameEditText.text.toString()
+            val category = binding.budgetCategoryEditText.text.toString()
+            val amount = binding.budgetAmountEditText.text.toString().toDouble()
+            setFragmentResult("requestKey", bundleOf("bundleKey" to name))
             rootView.findNavController().navigateUp()
         }
         return rootView

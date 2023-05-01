@@ -14,7 +14,7 @@ class BudgetItemAdapter(val budgetItemList: MutableList<BudgetItem>):
 
     override fun onBindViewHolder(holder: BudgetViewHolder, position: Int) {
         val currentBudgetItem = budgetItemList[position]
-        if(!currentBudgetItem.isCompleted){
+        if (!currentBudgetItem.isCompleted){
             holder.bindBudgetItem(currentBudgetItem)
         }
     }

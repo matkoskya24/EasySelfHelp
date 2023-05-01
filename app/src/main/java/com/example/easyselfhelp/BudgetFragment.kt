@@ -12,22 +12,22 @@ import com.example.easyselfhelp.databinding.FragmentBudgetFragmentBinding
 class BudgetFragment : Fragment() {
     private var _binding:FragmentBudgetFragmentBinding? = null
     val binding get() = _binding!!
-    private var budgetList: MutableList<BudgetItem> = mutableListOf(BudgetItem("", "", 0.0, true))
+    private var budgetList: MutableList<BudgetItem> = mutableListOf()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentBudgetFragmentBinding.inflate(inflater, container, false)
         val rootView = binding.root
-        val myAdapter = BudgetItemAdapter(budgetList)
-        binding.recyclerViewBudget.adapter = myAdapter
         binding.addBudgetItem.setOnClickListener {
             val action = BudgetFragmentDirections.actionBudgetFragmentToAddBudgetItemFragment()
             rootView.findNavController().navigate(action)
         }
         setFragmentResultListener("requestKey"){requestKey, bundle ->
-            var newBudgetItem: BudgetItem = bundle.get("bundleKey") as BudgetItem
+            var newBudgetItemName: String = bundle.getString("bundleKey").toString()
+            var newBudgetItem: BudgetItem = BudgetItem(newBudgetItemName, "category", 20.0, false)
             budgetList.add(newBudgetItem)
+            val myAdapter = BudgetItemAdapter(budgetList)
             binding.recyclerViewBudget.adapter = myAdapter
         }
         return rootView
