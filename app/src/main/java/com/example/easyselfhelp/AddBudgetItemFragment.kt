@@ -24,7 +24,11 @@ class AddBudgetItemFragment : Fragment() {
             val name = binding.itemNameEditText.text.toString()
             val category = binding.budgetCategoryEditText.text.toString()
             val amount = binding.budgetAmountEditText.text.toString().toDouble()
-            setFragmentResult("requestKey", bundleOf("bundleKey" to name))
+            val resultBundle: Bundle = bundleOf()
+            resultBundle.putString("budgetItemName", name)
+            resultBundle.putString("budgetItemCategory", category)
+            resultBundle.putDouble("budgetItemAmount", amount)
+            setFragmentResult("requestKey", bundleOf("bundleKey" to resultBundle))
             rootView.findNavController().navigateUp()
         }
         return rootView

@@ -10,7 +10,7 @@ class BudgetViewHolder(val binding:BudgetItemLayoutBinding ): RecyclerView.ViewH
         if (!currentBudgetItem.isCompleted) {
             binding.budgetNameTextView.text = currentBudgetItem.name
             binding.budgetCategoryTextView.text = "Category: " + currentBudgetItem.category
-            binding.budgetAmountTextView.text = "Amount: $" + (currentBudgetItem.amount)
+            binding.budgetAmountTextView.text = "Amount: $%.2f".format(currentBudgetItem.amount)
         }
     }
     init {
