@@ -31,8 +31,9 @@ class BudgetFragment : Fragment() {
             val category = newBudgetItemBundle?.getString("budgetItemCategory")
             val amount = newBudgetItemBundle?.getDouble("budgetItemAmount")
             val newBudgetItem = BudgetItem(name.toString(), category.toString(),
-                amount?.toDouble() ?: 0.0, false )
+                amount?.toDouble() ?: 0.0, false, viewModel.budgetID)
             viewModel.addToList(newBudgetItem)
+            viewModel.increaseID()
         }
         val myAdapter = BudgetItemAdapter(viewModel.budgetList)
         binding.recyclerViewBudget.adapter = myAdapter

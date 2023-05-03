@@ -58,20 +58,12 @@
         android:id="@+id/addBudgetItemFragment"
         android:name="com.example.easyselfhelp.AddBudgetItemFragment"
         android:label="fragment_add_budget_item"
-        tools:layout="@layout/fragment_add_budget_item" >
-        <action
-            android:id="@+id/action_addBudgetItemFragment_to_budgetFragment"
-            app:destination="@id/budgetFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_add_budget_item" />
     <fragment
         android:id="@+id/addHomeworkItemFragment"
         android:name="com.example.easyselfhelp.AddHomeworkItemFragment"
         android:label="fragment_add_homework_item"
-        tools:layout="@layout/fragment_add_homework_item" >
-        <action
-            android:id="@+id/action_addHomeworkItemFragment_to_homework_planner_fragment"
-            app:destination="@id/homework_planner_fragment" />
-    </fragment>
+        tools:layout="@layout/fragment_add_homework_item" />
     <fragment
         android:id="@+id/fitnessMenuFragment"
         android:name="com.example.easyselfhelp.FitnessMenuFragment"
@@ -106,20 +98,12 @@
         android:id="@+id/addWorkoutFragment"
         android:name="com.example.easyselfhelp.AddWorkoutFragment"
         android:label="fragment_add_workout"
-        tools:layout="@layout/fragment_add_workout" >
-        <action
-            android:id="@+id/action_addWorkoutFragment_to_workoutCreator"
-            app:destination="@id/workoutCreator" />
-    </fragment>
+        tools:layout="@layout/fragment_add_workout" />
     <fragment
         android:id="@+id/addFitnessResultFragment"
         android:name="com.example.easyselfhelp.AddFitnessResultFragment"
         android:label="fragment_add_fitness_result"
-        tools:layout="@layout/fragment_add_fitness_result" >
-        <action
-            android:id="@+id/action_addFitnessResultFragment_to_fitnessTrackerFragment"
-            app:destination="@id/fitnessTrackerFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_add_fitness_result" />
     <fragment
         android:id="@+id/budgetFragment"
         android:name="com.example.easyselfhelp.BudgetFragment"
@@ -127,5 +111,17 @@
         <action
             android:id="@+id/action_budgetFragment_to_addBudgetItemFragment"
             app:destination="@id/addBudgetItemFragment" />
+        <action
+            android:id="@+id/action_budgetFragment_to_budgetItemDeleteFragment"
+            app:destination="@id/budgetItemDeleteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/budgetItemDeleteFragment"
+        android:name="com.example.easyselfhelp.BudgetItemDeleteFragment"
+        android:label="fragment_budget_item_delete"
+        tools:layout="@layout/fragment_budget_item_delete" >
+        <argument
+            android:name="currentID"
+            app:argType="integer" />
     </fragment>
 </navigation>

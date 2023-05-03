@@ -1,5 +1,6 @@
 package com.example.easyselfhelp
 
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.easyselfhelp.databinding.BudgetItemLayoutBinding
 
@@ -17,6 +18,8 @@ class BudgetViewHolder(val binding:BudgetItemLayoutBinding ): RecyclerView.ViewH
         binding.budgetDeleteButton.setOnClickListener{
             currentBudgetItem.isCompleted = true
             bindBudgetItem(currentBudgetItem)
+            val action = BudgetFragmentDirections.actionBudgetFragmentToBudgetItemDeleteFragment(currentBudgetItem.id)
+            binding.root.findNavController().navigate(action)
         }
     }
 
