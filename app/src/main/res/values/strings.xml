@@ -22,4 +22,5 @@
     <string name="enter_amount_hint">Enter Amount</string>
     <string name="enter_category_hint">Enter Category</string>
     <string name="submit_budget_item_button_text">SUBMIT BUDGET ITEM</string>
+    <string name="are_you_sure_you_want_to_delete">Are You Sure You Want To Delete?</string>
 </resources>
