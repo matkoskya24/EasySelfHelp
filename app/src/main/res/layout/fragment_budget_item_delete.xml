@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/textView7"
-        style="@style/budget_recycler_text_view_style"
+        style="@style/recycler_title_view_style"
         android:text="@string/budget_item_deleted_successfully"
         android:textAlignment="center"
         android:textSize="@dimen/add_item_text_view_text_size"

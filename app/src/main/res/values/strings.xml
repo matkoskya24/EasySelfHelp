@@ -4,9 +4,9 @@
     <string name="home_screen_banner_text">EASY SELF HELP</string>
     <string name="tolkien_quote">Even the smallest person can change the course of the future \n- J.R.R. Tolkien</string>
     <string name="home_screen_button_string">Begin Your Journey</string>
-    <string name="easy_budget">Easy Budget</string>
+    <string name="easy_budget">Easy \nBudget</string>
     <string name="homework_planner">Homework \nPlanner</string>
-    <string name="fitness_tracker">Fitness Tracker</string>
+    <string name="fitness_tracker">Fitness \nTracker</string>
     <string name="positive_quotes">Positive \nQuotes</string>
     <string name="reading_list">Reading \nList</string>
     <string name="self_help_videos">Self-Help Videos</string>
@@ -26,4 +26,6 @@
     <string name="no">NO</string>
     <string name="budget_item_deleted_successfully">Budget Item Deleted Successfully!</string>
     <string name="ok">OK</string>
+    <string name="high_priority">High Priority?</string>
+    <string name="no_regular_case">No</string>
 </resources>

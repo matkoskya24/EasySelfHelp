@@ -6,16 +6,18 @@
     <dimen name="home_scren_icon_height">280dp</dimen>
     <dimen name="universal_text_size">24sp</dimen>
     <dimen name="main_menu_image_button_dimen">90dp</dimen>
-    <dimen name="main_menu_button_text_size">20sp</dimen>
+    <dimen name="main_menu_button_text_size">15sp</dimen>
     <dimen name="main_menu_button_margin">20dp</dimen>
     <dimen name="dev_icon_dimen">70dp</dimen>
     <dimen name="recycler_view_margin_bottom">100dp</dimen>
     <dimen name="add_item_text_view_text_size">35sp</dimen>
     <dimen name="budget_recycler_text_view_margin">23dp</dimen>
     <dimen name="recycler_view_image_dimen">90dp</dimen>
-    <dimen name="budget_recycler_text_size_one">20sp</dimen>
-    <dimen name="budget_recycler_text_size_two">18sp</dimen>
+    <dimen name="recycler_text_size_one">20sp</dimen>
+    <dimen name="recycler_text_size_two">18sp</dimen>
     <dimen name="delete_button_dimen">50dp</dimen>
     <dimen name="budget_title_text_size">35sp</dimen>
     <dimen name="edit_text_height">40dp</dimen>
+    <dimen name="budget_title_margin_right_recycler">90dp</dimen>
+    <dimen name="radio_button_text_size_recycler">15sp</dimen>
 </resources>

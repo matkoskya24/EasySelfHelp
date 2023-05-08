@@ -55,7 +55,7 @@
         android:fontFamily="@font/adamina"
         android:text="@string/submit_budget_item_button_text"
         android:textColor="@color/money_green"
-        android:textSize="@dimen/budget_recycler_text_size_one"
+        android:textSize="@dimen/recycler_text_size_one"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/budget_category_edit_text" />
 

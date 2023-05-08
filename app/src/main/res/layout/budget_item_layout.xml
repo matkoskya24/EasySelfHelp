@@ -12,33 +12,31 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/budget_name_text_view"
-        style="@style/budget_recycler_text_view_style"
-        android:textSize="@dimen/universal_text_size"
+        style="@style/recycler_title_view_style"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginRight="@dimen/budget_title_margin_right_recycler"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Budget Item" />
     <TextView
         android:id="@+id/budget_category_text_view"
-        style="@style/budget_recycler_text_view_style"
+        style="@style/recycler_sub1_view_style"
         android:layout_marginLeft="@dimen/budget_recycler_text_view_margin"
-        android:textSize="@dimen/budget_recycler_text_size_one"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/budget_name_text_view"
         tools:text="Category: category" />
     <TextView
         android:id="@+id/budget_amount_text_view"
-        style="@style/budget_recycler_text_view_style"
-        android:textSize="@dimen/budget_recycler_text_size_two"
+        style="@style/recycler_sub2_view_style"
         app:layout_constraintStart_toStartOf="@+id/budget_category_text_view"
         app:layout_constraintTop_toBottomOf="@+id/budget_category_text_view"
         tools:text="Amount: $00000.00" />
     <ImageButton
         android:id="@+id/budget_delete_button"
-        android:layout_width="@dimen/delete_button_dimen"
-        android:layout_height="@dimen/delete_button_dimen"
+        style="@style/delete_button_style"
         android:backgroundTint="@color/money_green"
         android:src="@drawable/ic_baseline_delete_forever_24"
         app:layout_constraintBottom_toBottomOf="parent"
