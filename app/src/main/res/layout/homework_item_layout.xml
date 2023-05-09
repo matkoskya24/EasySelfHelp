@@ -31,12 +31,11 @@
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/homework_name_view_recycler"
         tools:text="Due Date: 00-00-0000" />
-
-
     <TextView
         style="@style/recycler_sub2_view_style"
         android:layout_margin="10dp"
-        android:text="@string/high_priority"
+        tools:text="@string/high_priority"
+        android:textColor="@color/go_green"
         android:textSize="@dimen/recycler_text_size_two"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/due_date_view_recycler"

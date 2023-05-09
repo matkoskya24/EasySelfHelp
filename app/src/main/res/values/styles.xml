@@ -125,4 +125,25 @@
         <item name="android:textSize">@dimen/radio_button_text_size_recycler</item>
         <item name="android:fontFamily">@font/adamina</item>
     </style>
+    <style name="homework_date_edit_text_style" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">@dimen/homework_recyler_date_dimen_one</item>
+        <item name="android:layout_height">@dimen/homework_recyler_date_dimen_one</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:hint">00</item>
+        <item name="android:background">@color/grey</item>
+        <item name="android:textSize">@dimen/recycler_text_size_one</item>
+    </style>
+    <style name="homework_date_text_view_style" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:fontFamily">@font/adamina</item>
+        <item name="android:textColor">@color/gold</item>
+    </style>
+    <style name="homework_date_layout_style" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/main_menu_button_margin</item>
+        <item name="android:orientation">vertical</item>
+    </style>
 </resources>
