@@ -35,7 +35,7 @@
         android:id="@+id/highPriorityView"
         style="@style/recycler_sub2_view_style"
         android:layout_margin="10dp"
-        tools:text="@string/high_priority"
+        tools:text="@string/high_priority_no_question"
         android:textColor="@color/go_green"
         android:textSize="@dimen/recycler_text_size_two"
         app:layout_constraintBottom_toBottomOf="parent"

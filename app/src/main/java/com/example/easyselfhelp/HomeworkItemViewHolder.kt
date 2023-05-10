@@ -1,5 +1,6 @@
 package com.example.easyselfhelp
 
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.easyselfhelp.databinding.HomeworkItemLayoutBinding
 
@@ -10,7 +11,17 @@ class HomeworkItemViewHolder(val binding:HomeworkItemLayoutBinding):RecyclerView
         if(!currentHomeworkItem.isCompleted){
             binding.homeworkNameViewRecycler.text = currentHomeworkItem.assignmentName
             binding.dueDateViewRecycler.text = currentHomeworkItem.assignmentDueDate
-            binding.
+            if (currentHomeworkItem.highPriority){
+                binding.highPriorityView.text = R.string.high_priority_no_question.toString()
+            }
+        }
+    }
+    init {
+        binding.homeworkItemDeleteButton.setOnClickListener {
+            currentHomeworkItem.isCompleted = true
+            bindHomeworkItem(currentHomeworkItem)
+            val action = homework_planner_fragmentDirections.actionHomeworkPlannerFragmentToHomeworkItemDeleteFragment(currentHomeworkItem.id)
+            binding.root.findNavController().navigate(action)
         }
     }
 }

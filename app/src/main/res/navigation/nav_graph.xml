@@ -21,7 +21,7 @@
         tools:layout="@layout/fragment_main_menu" >
         <action
             android:id="@+id/action_mainMenu_to_homework_planner_fragment"
-            app:destination="@id/homework_planner_fragment" />
+            app:destination="@id/homeworkPlannerFragment" />
         <action
             android:id="@+id/action_mainMenu_to_quotesFragment"
             app:destination="@id/quotesFragment" />
@@ -36,7 +36,7 @@
             app:destination="@id/budgetFragment" />
     </fragment>
     <fragment
-        android:id="@+id/homework_planner_fragment"
+        android:id="@+id/homeworkPlannerFragment"
         android:name="com.example.easyselfhelp.homework_planner_fragment"
         android:label="fragment_homework_planner_fragment"
         tools:layout="@layout/fragment_homework_planner_fragment" >
@@ -131,5 +131,9 @@
         android:id="@+id/homeworkItemDeleteFragment"
         android:name="com.example.easyselfhelp.HomeworkItemDeleteFragment"
         android:label="fragment_homework_item_delete"
-        tools:layout="@layout/fragment_homework_item_delete" />
+        tools:layout="@layout/fragment_homework_item_delete" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
 </navigation>

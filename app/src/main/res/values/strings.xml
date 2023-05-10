@@ -36,4 +36,5 @@
     <string name="year">Year</string>
     <string name="enter_due_date">Enter Due Date</string>
     <string name="submit_homework_item">SUBMIT HOMEWORK ITEM</string>
+    <string name="high_priority_no_question">HIGH PRIORITY</string>
 </resources>

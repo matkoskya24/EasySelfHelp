@@ -31,7 +31,7 @@ class AddHomeworkItemFragment : Fragment() {
             resultBundle.putString("homeworkAssignmentName", assignmentName)
             resultBundle.putString("homeworkDueDate", dueDate)
             resultBundle.putBoolean("homeworkPriority", highPriority)
-            setFragmentResult("requestKey", bundleOf("bundleKey" to resultBundle))
+            setFragmentResult("requestKeyHomework", bundleOf("bundleKeyHomework" to resultBundle))
             rootview.findNavController().navigateUp()
         }
         return rootview
