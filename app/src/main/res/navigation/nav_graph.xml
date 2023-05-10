@@ -43,6 +43,9 @@
         <action
             android:id="@+id/action_homework_planner_fragment_to_addHomeworkItemFragment"
             app:destination="@id/addHomeworkItemFragment" />
+        <action
+            android:id="@+id/action_homework_planner_fragment_to_homeworkItemDeleteFragment"
+            app:destination="@id/homeworkItemDeleteFragment" />
     </fragment>
     <fragment
         android:id="@+id/quotesFragment"
@@ -124,4 +127,9 @@
             android:name="currentID"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/homeworkItemDeleteFragment"
+        android:name="com.example.easyselfhelp.HomeworkItemDeleteFragment"
+        android:label="fragment_homework_item_delete"
+        tools:layout="@layout/fragment_homework_item_delete" />
 </navigation>

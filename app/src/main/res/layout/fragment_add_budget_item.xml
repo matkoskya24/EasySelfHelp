@@ -28,7 +28,7 @@
         android:id="@+id/budget_amount_edit_text"
         style="@style/edit_text_style"
         android:hint="@string/enter_amount_hint"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/budget_category_edit_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,14 +45,12 @@
 
     <Button
         android:id="@+id/submit_budget_item_button"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/gold"
-        android:fontFamily="@font/adamina"
+        style="@style/submit_button_style"
         android:text="@string/submit_budget_item_button_text"
         android:textColor="@color/money_green"
-        android:textSize="@dimen/recycler_text_size_one"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/budget_category_edit_text" />
 
 

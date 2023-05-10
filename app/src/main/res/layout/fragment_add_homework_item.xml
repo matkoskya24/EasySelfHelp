@@ -2,8 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    style="@style/layout_style"
     android:background="@color/space_cadet"
     tools:context=".AddHomeworkItemFragment">
 
@@ -13,23 +12,24 @@
         android:layout_marginTop="@dimen/main_menu_button_margin"
         android:text="@string/add_new_homework_item"
         android:textSize="@dimen/add_homework_title_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/assignment_name_edit_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/assignment_name_edit_text"
         style="@style/edit_text_style"
         android:layout_marginTop="@dimen/main_menu_button_margin"
         android:text="@string/homework_edit_text_one"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/main_menu_button_margin"
+        style="@style/homework_constraint_layout_style"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/assignment_name_edit_text">
@@ -92,6 +92,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <EditText
+                android:id="@+id/due_year_edit_text"
                 style="@style/homework_date_edit_text_style"
                 android:layout_width="@dimen/homework_year_width"
                 android:hint="@string/homework_year_hint"
@@ -105,18 +106,60 @@
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:orientation="vertical"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        style="@style/homework_constraint_layout_style"
+        app:layout_constraintBottom_toTopOf="@+id/submit_homework_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/textView9"
+            style="@style/recycler_title_view_style"
+            android:text="@string/high_priority"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+            <RadioButton
+                android:id="@+id/high_priority_yes"
+                style="@style/radio_button_style_homework"
+                android:buttonTint="@color/go_green"
+                android:text="@string/yes"
+                android:textColor="@color/go_green"
+                android:textSize="@dimen/radio_button_text_size_recycler" />
+
+            <RadioButton
+                android:id="@+id/high_priority_no"
+                style="@style/radio_button_style_homework"
+                android:layout_marginRight="@dimen/main_menu_image_button_dimen"
+                android:buttonTint="@color/stop_red"
+                android:text="@string/no_regular_case"
+                android:textColor="@color/stop_red" />
+        </RadioGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/submit_homework_button"
+        style="@style/submit_button_style"
+        android:text="@string/submit_homework_item"
+        android:textColor="@color/space_cadet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintHorizontal_bias="0.5" />
 
 
 

@@ -26,7 +26,7 @@
     <string name="no">NO</string>
     <string name="budget_item_deleted_successfully">Budget Item Deleted Successfully!</string>
     <string name="ok">OK</string>
-    <string name="high_priority">High Priority</string>
+    <string name="high_priority">High Priority?</string>
     <string name="no_regular_case">No</string>
     <string name="add_new_homework_item">Add New Homework Item</string>
     <string name="homework_edit_text_one">Enter Assignment Name</string>
@@ -35,4 +35,5 @@
     <string name="homework_year_hint">0000</string>
     <string name="year">Year</string>
     <string name="enter_due_date">Enter Due Date</string>
+    <string name="submit_homework_item">SUBMIT HOMEWORK ITEM</string>
 </resources>

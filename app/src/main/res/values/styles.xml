@@ -124,6 +124,7 @@
         <item name="android:layout_weight">1</item>
         <item name="android:textSize">@dimen/radio_button_text_size_recycler</item>
         <item name="android:fontFamily">@font/adamina</item>
+        <item name="android:layout_marginLeft">@dimen/main_menu_image_button_dimen</item>
     </style>
     <style name="homework_date_edit_text_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">@dimen/homework_recyler_date_dimen_one</item>
@@ -136,6 +137,7 @@
     <style name="homework_date_text_view_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
+        <item name="android:inputType">number</item>
         <item name="android:textAlignment">center</item>
         <item name="android:fontFamily">@font/adamina</item>
         <item name="android:textColor">@color/gold</item>
@@ -145,5 +147,17 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">@dimen/main_menu_button_margin</item>
         <item name="android:orientation">vertical</item>
+    </style>
+    <style name="homework_constraint_layout_style" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/main_menu_button_margin</item>
+    </style>
+    <style name="submit_button_style" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/submit_button_height</item>
+        <item name="android:backgroundTint">@color/gold</item>
+        <item name="android:fontFamily">@font/adamina</item>
+        <item name="android:textSize">@dimen/recycler_text_size_one</item>
     </style>
 </resources>
