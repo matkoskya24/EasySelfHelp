@@ -17,12 +17,13 @@ class HomeworkItemViewModel: ViewModel() {
     }
     fun removeFromList(id: Int){
         var counter = 0
-        while(counter < _assignmentList.size){
-            if(_assignmentList[counter].id == id){
+        while(counter < _assignmentListTemp.size){
+            if(counter < _assignmentList.size && _assignmentList[counter].id == id){
                 _assignmentList.removeAt(counter)
             }else if(_assignmentListTemp[counter].id == id){
                 _assignmentListTemp.removeAt(counter)
             }
+            counter++
         }
     }
     private fun organizeList(){
@@ -30,20 +31,26 @@ class HomeworkItemViewModel: ViewModel() {
             var counter = 0
             var highPriorityCount = 0
             while (counter < _assignmentListTemp.size){
-                if(_assignmentListTemp[counter].highPriority){
-                    _assignmentList.add(highPriorityCount, _assignmentListTemp[counter])
-                    highPriorityCount++
+                if(!_assignmentList[counter].isCompleted){
+                    if(_assignmentListTemp[counter].highPriority == true){
+                        _assignmentList.add(highPriorityCount, _assignmentListTemp[counter])
+                        highPriorityCount++
+                    }
+                    counter++
                 }
-            }
-            counter = 0
-            while (counter < _assignmentListTemp.size){
-                if(!_assignmentListTemp[counter].highPriority){
-                    _assignmentList.add(_assignmentListTemp[counter])
+                counter = 0
+                while (counter < _assignmentListTemp.size){
+                    if(_assignmentListTemp[counter].highPriority == false){
+                        _assignmentList.add(_assignmentListTemp[counter])
+                    }
+                    counter++
                 }
             }
         }else{
             for(HomeworkItem in _assignmentListTemp){
-                _assignmentList.add(HomeworkItem)
+                if(!HomeworkItem.isCompleted) {
+                    _assignmentList.add(HomeworkItem)
+                }
             }
         }
     }

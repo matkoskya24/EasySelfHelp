@@ -160,4 +160,21 @@
         <item name="android:fontFamily">@font/adamina</item>
         <item name="android:textSize">@dimen/recycler_text_size_one</item>
     </style>
+    <style name="delete_title_view_style" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/adamina</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/add_item_text_view_text_size</item>
+        <item name="android:textColor">@color/gold</item>
+    </style>
+    <style name="acknowledge_button_view_style" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="backgroundTint">@color/gold</item>
+        <item name="android:fontFamily">@font/adamina</item>
+        <item name="android:textColor">@color/stop_red</item>
+        <item name="android:text">@string/ok</item>
+        <item name="android:textSize">@dimen/universal_text_size</item>
+    </style>
 </resources>

@@ -8,21 +8,15 @@
 
     <TextView
         android:id="@+id/textView7"
-        style="@style/recycler_title_view_style"
+        style="@style/delete_title_view_style"
         android:text="@string/budget_item_deleted_successfully"
-        android:textAlignment="center"
-        android:textSize="@dimen/add_item_text_view_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/acknowledge_button"
-        style="@style/button_view_style"
-        android:backgroundTint="@color/gold"
-        android:fontFamily="@font/adamina"
-        android:text="@string/ok"
-        android:textColor="@color/red"
+        style="@style/acknowledge_button_view_style"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

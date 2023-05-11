@@ -33,6 +33,13 @@ class homework_planner_fragment : Fragment() {
             viewModel.addToList(newHomeworkItem)
             viewModel.increaseID()
         }
+        val myAdapter = HomeworkItemAdapter(viewModel.assignmentList)
+        binding.recyclerViewHomework.adapter = myAdapter
+        return rootView
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

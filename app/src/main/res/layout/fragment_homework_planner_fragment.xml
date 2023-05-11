@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/layout_style"
+    android:backgroundTint="@color/space_cadet"
     tools:context=".homework_planner_fragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -18,8 +19,8 @@
         android:id="@+id/textView4"
         style="@style/add_item_text_view"
         android:text="@string/add_homework"
-        android:textColor="@color/space_cadet"
-        android:textSize="30sp"
+        android:textColor="@color/gold"
+        android:textSize="@dimen/add_item_title_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/add_homework_item_button"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,6 +29,7 @@
     <ImageButton
         android:id="@+id/add_homework_item_button"
         style="@style/add_item_image_button"
+        android:backgroundTint="@color/space_cadet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView4"

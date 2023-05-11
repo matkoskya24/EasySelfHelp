@@ -22,10 +22,12 @@ class AddHomeworkItemFragment : Fragment() {
         val rootview = binding.root
         binding.submitHomeworkButton.setOnClickListener {
             val assignmentName = binding.assignmentNameEditText.text.toString()
-            val dueDate = "${binding.dueMonthEditText.text}-${binding.dueMonthEditText.text}-${binding.dueYearEditText.text}".toString()
+            val dueDate = "${binding.dueMonthEditText.text}-${binding.dueDayEditText.text}-${binding.dueYearEditText.text}".toString()
             var highPriority: Boolean = false
             if(binding.highPriorityYes.isChecked){
                 highPriority = true
+            }else if(binding.highPriorityNo.isChecked){
+                highPriority = false
             }
             val resultBundle = bundleOf()
             resultBundle.putString("homeworkAssignmentName", assignmentName)

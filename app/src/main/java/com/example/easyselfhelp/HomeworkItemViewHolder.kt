@@ -4,6 +4,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.easyselfhelp.databinding.HomeworkItemLayoutBinding
 
+
 class HomeworkItemViewHolder(val binding:HomeworkItemLayoutBinding):RecyclerView.ViewHolder(binding.root) {
     private lateinit var currentHomeworkItem: HomeworkItem
     fun bindHomeworkItem(homeworkItem: HomeworkItem){
@@ -11,8 +12,8 @@ class HomeworkItemViewHolder(val binding:HomeworkItemLayoutBinding):RecyclerView
         if(!currentHomeworkItem.isCompleted){
             binding.homeworkNameViewRecycler.text = currentHomeworkItem.assignmentName
             binding.dueDateViewRecycler.text = currentHomeworkItem.assignmentDueDate
-            if (currentHomeworkItem.highPriority){
-                binding.highPriorityView.text = R.string.high_priority_no_question.toString()
+            if (currentHomeworkItem.highPriority == true){
+                binding.highPriorityView.text = "HIGH PRIORITY"
             }
         }
     }

@@ -21,7 +21,7 @@
         android:id="@+id/assignment_name_edit_text"
         style="@style/edit_text_style"
         android:layout_marginTop="@dimen/main_menu_button_margin"
-        android:text="@string/homework_edit_text_one"
+        android:hint="@string/homework_edit_text_one"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />

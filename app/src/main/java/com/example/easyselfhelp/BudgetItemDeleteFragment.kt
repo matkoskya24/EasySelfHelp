@@ -29,5 +29,9 @@ class BudgetItemDeleteFragment : Fragment() {
 
         return rootView
     }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
 }
