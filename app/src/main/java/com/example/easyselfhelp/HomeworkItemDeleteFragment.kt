@@ -22,7 +22,7 @@ class HomeworkItemDeleteFragment : Fragment() {
         val rootview = binding.root
         val args = HomeworkItemDeleteFragmentArgs.fromBundle(requireArguments())
         binding.homeworkDeleteAcknowledgeButton.setOnClickListener {
-            viewModel.removeFromList(args.id)
+            viewModel.removeFromList(args.id, args.priority)
             rootview.findNavController().navigateUp()
         }
         return rootview

@@ -28,6 +28,8 @@ class AddHomeworkItemFragment : Fragment() {
                 highPriority = true
             }else if(binding.highPriorityNo.isChecked){
                 highPriority = false
+            }else{
+                highPriority = false
             }
             val resultBundle = bundleOf()
             resultBundle.putString("homeworkAssignmentName", assignmentName)

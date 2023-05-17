@@ -133,6 +133,7 @@
         <item name="android:hint">00</item>
         <item name="android:background">@color/grey</item>
         <item name="android:textSize">@dimen/recycler_text_size_one</item>
+        <item name="android:inputType">number</item>
     </style>
     <style name="homework_date_text_view_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">match_parent</item>

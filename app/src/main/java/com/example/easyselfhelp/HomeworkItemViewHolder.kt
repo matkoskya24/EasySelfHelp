@@ -21,7 +21,7 @@ class HomeworkItemViewHolder(val binding:HomeworkItemLayoutBinding):RecyclerView
         binding.homeworkItemDeleteButton.setOnClickListener {
             currentHomeworkItem.isCompleted = true
             bindHomeworkItem(currentHomeworkItem)
-            val action = homework_planner_fragmentDirections.actionHomeworkPlannerFragmentToHomeworkItemDeleteFragment(currentHomeworkItem.id)
+            val action = homework_planner_fragmentDirections.actionHomeworkPlannerFragmentToHomeworkItemDeleteFragment(currentHomeworkItem.id, currentHomeworkItem.highPriority?: false)
             binding.root.findNavController().navigate(action)
         }
     }
