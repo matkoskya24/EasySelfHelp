@@ -139,6 +139,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:inputType">number</item>
+        <item name="android:background">@color/space_cadet</item>
         <item name="android:textAlignment">center</item>
         <item name="android:fontFamily">@font/adamina</item>
         <item name="android:textColor">@color/gold</item>
@@ -148,6 +149,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">@dimen/main_menu_button_margin</item>
         <item name="android:orientation">vertical</item>
+        <item name="android:background">@color/grey</item>
     </style>
     <style name="homework_constraint_layout_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">match_parent</item>
