@@ -52,9 +52,7 @@
             app:layout_constraintTop_toTopOf="parent">
             <Spinner
                 android:id="@+id/month_spinner"
-                android:layout_width="@dimen/homework_recyler_date_dimen_one"
-                android:layout_height="@dimen/homework_recyler_date_dimen_one"
-                android:backgroundTint="@color/black"
+                style="@style/homework_spinner_style"
                 />
             <TextView
                 style="@style/homework_date_text_view_style"
@@ -72,9 +70,7 @@
 
             <Spinner
                 android:id="@+id/day_spinner"
-                android:layout_width="@dimen/homework_recyler_date_dimen_one"
-                android:layout_height="@dimen/homework_recyler_date_dimen_one"
-                android:backgroundTint="@color/black"
+                style="@style/homework_spinner_style"
                 />
 
             <TextView

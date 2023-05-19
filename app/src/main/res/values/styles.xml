@@ -180,4 +180,9 @@
         <item name="android:text">@string/ok</item>
         <item name="android:textSize">@dimen/universal_text_size</item>
     </style>
+    <style name="homework_spinner_style" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">@dimen/homework_recycler_dimen_two</item>
+        <item name="android:layout_height">@dimen/homework_recyler_date_dimen_one</item>
+        <item name="android:backgroundTint">@color/black</item>
+    </style>
 </resources>

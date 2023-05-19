@@ -7,10 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
 import androidx.navigation.findNavController
 import com.example.easyselfhelp.databinding.FragmentAddHomeworkItemBinding
+import java.time.LocalDate
+import java.time.MonthDay
+import java.time.Year
+import java.util.*
 
 
 class AddHomeworkItemFragment : Fragment() {
@@ -18,6 +23,9 @@ class AddHomeworkItemFragment : Fragment() {
     val binding get() = _binding!!
     private var dueDay = 0
     private var dueMonth = 0
+    private val currentMonth = Calendar.MONTH
+    private val currentDate = Calendar.DAY_OF_MONTH
+    private val currentYear = Calendar.YEAR
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,10 +34,11 @@ class AddHomeworkItemFragment : Fragment() {
         val rootview = binding.root
         spinnerSetup()
         binding.submitHomeworkButton.setOnClickListener {
-            if(dueDay != 0 && dueMonth != 0 && binding.dueYearEditText.text.toString().toInt() < 9999) {
-                val assignmentName = binding.assignmentNameEditText.text.toString()
-                val dueDate = "${dueMonth}-${dueDay}-${binding.dueYearEditText.text}".toString()
-                var highPriority: Boolean = false
+            val assignmentName = binding.assignmentNameEditText.text.toString()
+            val dateValid = checkIfDateValid(dueDay, dueMonth, binding.dueYearEditText.text.toString().toInt())
+            if(dateValid && assignmentName != null) {
+                val dueDate = "${dueMonth}-${dueDay}-${binding.dueYearEditText.text}"
+                var highPriority: Boolean
                 if (binding.highPriorityYes.isChecked) {
                     highPriority = true
                 } else if (binding.highPriorityNo.isChecked) {
@@ -46,6 +55,8 @@ class AddHomeworkItemFragment : Fragment() {
                     bundleOf("bundleKeyHomework" to resultBundle)
                 )
                 rootview.findNavController().navigateUp()
+            }else if(!dateValid){
+
             }
         }
         return rootview
@@ -98,5 +109,21 @@ class AddHomeworkItemFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+    private fun checkIfDateValid(day: Int, month: Int, year: Int): Boolean{
+        if(day >= currentDate && month >= currentMonth && year >= currentYear){
+            return true
+        }else if(day <= currentDate && month > currentMonth && year >= currentYear){
+            return true
+        }else if(day <= currentDate && month <= currentMonth && year > currentYear){
+            return true
+        }else{
+            return false
+        }
+    }
+    private fun diagnoseDate(date: Int, id: Int): Boolean{
+        if(id == 1){
+
+        }
     }
 }
