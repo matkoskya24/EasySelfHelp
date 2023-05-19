@@ -121,9 +121,5 @@ class AddHomeworkItemFragment : Fragment() {
             return false
         }
     }
-    private fun diagnoseDate(date: Int, id: Int): Boolean{
-        if(id == 1){
 
-        }
-    }
 }
