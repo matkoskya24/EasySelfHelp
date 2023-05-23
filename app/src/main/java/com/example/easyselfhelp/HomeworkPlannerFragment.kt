@@ -24,15 +24,6 @@ class homework_planner_fragment : Fragment() {
             val action = homework_planner_fragmentDirections.actionHomeworkPlannerFragmentToAddHomeworkItemFragment()
             rootView.findNavController().navigate(action)
         }
-        setFragmentResultListener("requestKeyHomework"){requestKeyHomework, bundle ->
-            var newHomeworkItemBundle: Bundle? = bundle.getBundle("bundleKeyHomework")
-            val assignmentName = newHomeworkItemBundle?.getString("homeworkAssignmentName")
-            val assignmentDueDate = newHomeworkItemBundle?.getString("homeworkDueDate")
-            val homeworkPriority = newHomeworkItemBundle?.getBoolean("homeworkPriority")
-            val newHomeworkItem = HomeworkItem(assignmentName.toString(), assignmentDueDate.toString(), homeworkPriority, false, viewModel.assignmentID)
-            viewModel.addToList(newHomeworkItem)
-            viewModel.increaseID()
-        }
         val myAdapter = HomeworkItemAdapter(viewModel.assignmentList)
         binding.recyclerViewHomework.adapter = myAdapter
         return rootView

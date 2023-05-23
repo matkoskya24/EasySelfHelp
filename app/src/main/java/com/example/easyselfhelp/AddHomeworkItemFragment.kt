@@ -9,6 +9,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.os.bundleOf
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.setFragmentResult
 import androidx.navigation.findNavController
 import com.example.easyselfhelp.databinding.FragmentAddHomeworkItemBinding
@@ -20,12 +21,13 @@ import java.util.*
 
 class AddHomeworkItemFragment : Fragment() {
     private var _binding: FragmentAddHomeworkItemBinding? = null
+    private val viewModel: HomeworkItemViewModel by activityViewModels()
     val binding get() = _binding!!
     private var dueDay = 0
     private var dueMonth = 0
-    private val currentMonth = Calendar.MONTH
-    private val currentDate = Calendar.DAY_OF_MONTH
-    private val currentYear = Calendar.YEAR
+    private val currentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1
+    private val currentDate = Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
+    private val currentYear = Calendar.getInstance().get(Calendar.YEAR)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,9 +37,14 @@ class AddHomeworkItemFragment : Fragment() {
         spinnerSetup()
         binding.submitHomeworkButton.setOnClickListener {
             val assignmentName = binding.assignmentNameEditText.text.toString()
-            val dateValid = checkIfDateValid(dueDay, dueMonth, binding.dueYearEditText.text.toString().toInt())
-            if(dateValid && assignmentName != null) {
-                val dueDate = "${dueMonth}-${dueDay}-${binding.dueYearEditText.text}"
+            var dueYearString = binding.dueYearEditText.text.toString()
+            var dueYear = 0
+            if(dueYearString != ""){
+               dueYear = dueYearString.toInt()
+            }
+            val dateValid = checkIfDateValid(dueDay, dueMonth, dueYear)
+            if(assignmentName != "" && dateValid) {
+                val dueDate = "${dueMonth}-${dueDay}-${dueYear}"
                 var highPriority: Boolean
                 if (binding.highPriorityYes.isChecked) {
                     highPriority = true
@@ -46,17 +53,22 @@ class AddHomeworkItemFragment : Fragment() {
                 } else {
                     highPriority = false
                 }
-                val resultBundle = bundleOf()
-                resultBundle.putString("homeworkAssignmentName", assignmentName)
-                resultBundle.putString("homeworkDueDate", dueDate)
-                resultBundle.putBoolean("homeworkPriority", highPriority)
-                setFragmentResult(
-                    "requestKeyHomework",
-                    bundleOf("bundleKeyHomework" to resultBundle)
-                )
+                val newHomeworkItem = HomeworkItem(assignmentName, dueDate, highPriority, false, viewModel.assignmentID)
+                viewModel.addToList(newHomeworkItem)
+                viewModel.increaseID()
                 rootview.findNavController().navigateUp()
+            }else if(assignmentName == ""){
+                Toast.makeText(activity, "Enter Assignment Name", Toast.LENGTH_LONG).show()
             }else if(!dateValid){
-
+                if(dueYear > 9999 || dueYear < currentYear){
+                    Toast.makeText(activity, "Enter Valid Year", Toast.LENGTH_LONG).show()
+                }else if(dueMonth < currentMonth && dueYear <= currentYear){
+                    Toast.makeText(activity, "Enter Valid Due Date", Toast.LENGTH_LONG).show()
+                }else if(dueDay < currentDate && dueMonth <= currentMonth && dueYear <= currentYear){
+                    Toast.makeText(activity, "Enter Valid Due Date", Toast.LENGTH_LONG).show()
+                }
+            }else{
+                Toast.makeText(activity, "Unknown Error", Toast.LENGTH_LONG).show()
             }
         }
         return rootview

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
 import androidx.navigation.findNavController
@@ -23,13 +24,20 @@ class AddBudgetItemFragment : Fragment() {
         binding.submitBudgetItemButton.setOnClickListener {
             val name = binding.itemNameEditText.text.toString()
             val category = binding.budgetCategoryEditText.text.toString()
-            val amount = binding.budgetAmountEditText.text.toString().toDouble()
-            val resultBundle: Bundle = bundleOf()
-            resultBundle.putString("budgetItemName", name)
-            resultBundle.putString("budgetItemCategory", category)
-            resultBundle.putDouble("budgetItemAmount", amount)
-            setFragmentResult("requestKey", bundleOf("bundleKey" to resultBundle))
-            rootView.findNavController().navigateUp()
+            val amountString = binding.budgetAmountEditText.text.toString()
+            if(name != "" && amountString != "") {
+                val amount = amountString.toDouble()
+                val resultBundle: Bundle = bundleOf()
+                resultBundle.putString("budgetItemName", name)
+                resultBundle.putString("budgetItemCategory", category)
+                resultBundle.putDouble("budgetItemAmount", amount)
+                setFragmentResult("requestKey", bundleOf("bundleKey" to resultBundle))
+                rootView.findNavController().navigateUp()
+            }else if(name == ""){
+                Toast.makeText(activity, "Enter Budget Item Name", Toast.LENGTH_LONG).show()
+            }else if(amountString == ""){
+                Toast.makeText(activity, "Enter Budget Amount", Toast.LENGTH_LONG).show()
+            }
         }
         return rootView
     }
