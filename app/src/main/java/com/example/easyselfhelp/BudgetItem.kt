@@ -1,4 +1,4 @@
 package com.example.easyselfhelp
 
-class BudgetItem(val name: String, val category: String, val amount: Double, var isCompleted: Boolean, var id: Int) {
+class BudgetItem(var name: String = "", var category: String = "", var amount: Double = 0.0, var isCompleted: Boolean = false, var id: Int = -1) {
 }
