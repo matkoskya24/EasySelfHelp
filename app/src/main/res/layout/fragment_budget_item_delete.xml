@@ -7,7 +7,7 @@
     tools:context=".BudgetItemDeleteFragment">
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/budget_item_delete_title_view"
         style="@style/delete_title_view_style"
         android:text="@string/budget_item_deleted_successfully"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +20,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/budget_item_delete_title_view" />
+
+    <Button
+        android:id="@+id/clear_all_budget_items"
+        style="@style/acknowledge_button_view_style"
+        android:text="CLEAR ALL BUDGET ITEMS"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/acknowledge_button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

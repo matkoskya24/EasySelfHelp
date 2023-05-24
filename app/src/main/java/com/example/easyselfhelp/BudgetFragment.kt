@@ -38,7 +38,7 @@ class BudgetFragment : Fragment() {
             val amount = newBudgetItemBundle?.getDouble("budgetItemAmount")
             val newBudgetItem = BudgetItem(name.toString(), category.toString(),
                 amount?.toDouble() ?: 0.0, false, viewModel.budgetID)
-            dbRef.child("budgetItem").push().setValue(newBudgetItem)
+            dbRef.child("BudgetItem").push().setValue(newBudgetItem)
             viewModel.addToList(newBudgetItem)
             viewModel.increaseID()
         }
