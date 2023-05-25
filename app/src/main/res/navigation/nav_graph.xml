@@ -83,7 +83,7 @@
         android:id="@+id/fitnessTrackerFragment"
         android:name="com.example.easyselfhelp.fitnessTrackerFragment"
         android:label="fragment_fitness_tracker"
-        tools:layout="@layout/fragment_fitness_tracker" >
+        tools:layout="@layout/fragment_add_fitness_result" >
         <action
             android:id="@+id/action_fitnessTrackerFragment_to_addFitnessResultFragment"
             app:destination="@id/addFitnessResultFragment" />
@@ -106,7 +106,7 @@
         android:id="@+id/addFitnessResultFragment"
         android:name="com.example.easyselfhelp.AddFitnessResultFragment"
         android:label="fragment_add_fitness_result"
-        tools:layout="@layout/fragment_add_fitness_result" />
+        tools:layout="@layout/fragment_track_fitness_results" />
     <fragment
         android:id="@+id/budgetFragment"
         android:name="com.example.easyselfhelp.BudgetFragment"

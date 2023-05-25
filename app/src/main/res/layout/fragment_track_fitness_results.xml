@@ -4,30 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/layout_style"
     android:background="@color/periwinkle"
-    tools:context=".AddWorkoutFragment">
+    tools:context=".AddFitnessResultFragment">
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/textView10"
         style="@style/title_view_style"
-        android:text="Your Workouts"
+        android:text="Your Workout Results"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/workout_recycler_view"
+        android:id="@+id/recycler_view_workout_results"
         style="@style/recycler_view_style"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/textView11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
     <TextView
         android:id="@+id/textView11"
         style="@style/add_item_text_view"
-        android:text="@string/create_new_workout"
+        android:text="Add Workout Result"
         android:textColor="@color/orchid"
-        android:textSize="@dimen/add_item_title_text_size"
+        android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/add_workout_button"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,5 +39,7 @@
         android:backgroundTint="@color/periwinkle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

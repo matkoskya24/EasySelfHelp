@@ -34,7 +34,7 @@ class fitnessTrackerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fitness_tracker, container, false)
+        return inflater.inflate(R.layout.fragment_add_fitness_result, container, false)
     }
 
     companion object {

@@ -40,6 +40,9 @@
     <string name="homework_item_successfully_deleted">Homework Item Successfully Deleted!</string>
     <string name="clear_all_budget_items">CLEAR ALL BUDGET ITEMS</string>
     <string name="clear_all_homework_items">CLEAR ALL HOMEWORK ITEMS</string>
+    <string name="quotes_title">Some Quotes to Brighten Your Day</string>
+    <string name="create_new_workout">Create New Workout</string>
+    <string name="book_rec">Positive Book Recommendations</string>
     <string-array name="spinner_30_day">
         <item>1</item>
         <item>2</item>
