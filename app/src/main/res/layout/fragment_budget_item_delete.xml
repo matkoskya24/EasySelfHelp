@@ -25,7 +25,7 @@
     <Button
         android:id="@+id/clear_all_budget_items"
         style="@style/acknowledge_button_view_style"
-        android:text="CLEAR ALL BUDGET ITEMS"
+        android:text="@string/clear_all_budget_items"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

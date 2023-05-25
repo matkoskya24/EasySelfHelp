@@ -7,7 +7,7 @@
     tools:context=".HomeworkItemDeleteFragment">
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/homework_item_delete_view_title_view"
         style="@style/delete_title_view_style"
         android:text="@string/homework_item_successfully_deleted"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +20,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/homework_item_delete_view_title_view" />
+
+    <Button
+        android:id="@+id/homework_item_drop_tables"
+        style="@style/acknowledge_button_view_style"
+        android:text="@string/clear_all_homework_items"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homework_delete_acknowledge_button" />
 
 
 

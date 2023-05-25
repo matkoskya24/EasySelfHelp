@@ -6,21 +6,22 @@ class HomeworkItemViewModel: ViewModel() {
     private var _assignmentListLow: MutableList<HomeworkItem> = mutableListOf()
     private var _assignmentListHigh: MutableList<HomeworkItem> = mutableListOf()
     private var _assignmentList: MutableList<HomeworkItem> = mutableListOf()
+    private var redFlagIDs: MutableList<Int> = mutableListOf(-1)
     val assignmentList get() = _assignmentList
-    private var _assignmentId = 0
-    val assignmentID get() = _assignmentId
     fun addToList(homeworkItem: HomeworkItem){
         if(checkForDups(homeworkItem.id)){
             removeFromList(homeworkItem.id, homeworkItem.highPriority?: false)
         }else{
             removeDupsAdvanced(homeworkItem.assignmentName, homeworkItem.assignmentDueDate, homeworkItem.highPriority?: false)
         }
-       if(homeworkItem.highPriority == true){
-           _assignmentListHigh.add(homeworkItem)
-       }else{
-           _assignmentListLow.add(homeworkItem)
-       }
-        combineLists()
+        if(checkForRedFlag(homeworkItem.id)) {
+            if (homeworkItem.highPriority == true) {
+                _assignmentListHigh.add(homeworkItem)
+            } else {
+                _assignmentListLow.add(homeworkItem)
+            }
+            combineLists()
+        }
     }
     private fun combineLists(){
         _assignmentList = mutableListOf()
@@ -37,8 +38,21 @@ class HomeworkItemViewModel: ViewModel() {
             counter++
         }
     }
-    fun increaseID(){
-        _assignmentId++
+    fun generateNewID(): Int{
+        var randId: Int = kotlin.random.Random.nextInt()
+        while(randId==-1 || checkForDups(randId)){
+            randId = kotlin.random.Random.nextInt()
+        }
+        return  randId
+    }
+    fun addRedFlag(id: Int){
+        redFlagIDs.add(id)
+    }
+    fun dropTables(){
+        _assignmentList = mutableListOf()
+        _assignmentListHigh = mutableListOf()
+        _assignmentListLow = mutableListOf()
+        redFlagIDs = mutableListOf()
     }
     fun removeFromList(id: Int, priority: Boolean){
         var counter = 0
@@ -72,6 +86,15 @@ class HomeworkItemViewModel: ViewModel() {
                 return true
             }
             counter++
+        }
+        return false
+    }
+    private fun checkForRedFlag(id: Int): Boolean{
+        var counter = 0
+        while (counter < redFlagIDs.size){
+            if(id == redFlagIDs[counter]){
+                return true
+            }
         }
         return false
     }

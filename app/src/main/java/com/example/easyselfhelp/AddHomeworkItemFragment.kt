@@ -13,16 +13,21 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.setFragmentResult
 import androidx.navigation.findNavController
 import com.example.easyselfhelp.databinding.FragmentAddHomeworkItemBinding
+import com.google.firebase.database.DatabaseReference
 import java.time.LocalDate
 import java.time.MonthDay
 import java.time.Year
 import java.util.*
+import com.google.firebase.database.ktx.database
+import com.google.firebase.database.ktx.getValue
+import com.google.firebase.ktx.Firebase
 
 
 class AddHomeworkItemFragment : Fragment() {
     private var _binding: FragmentAddHomeworkItemBinding? = null
     private val viewModel: HomeworkItemViewModel by activityViewModels()
     val binding get() = _binding!!
+    lateinit var dbRef: DatabaseReference
     private var dueDay = 0
     private var dueMonth = 0
     private val currentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1
@@ -34,9 +39,11 @@ class AddHomeworkItemFragment : Fragment() {
     ): View? {
         _binding = FragmentAddHomeworkItemBinding.inflate(inflater, container, false)
         val rootview = binding.root
+        dbRef = Firebase.database.reference
         spinnerSetup()
         binding.submitHomeworkButton.setOnClickListener {
             val assignmentName = binding.assignmentNameEditText.text.toString()
+            val assignmentID = viewModel.generateNewID()
             var dueYearString = binding.dueYearEditText.text.toString()
             var dueYear = 0
             if(dueYearString != ""){
@@ -53,9 +60,13 @@ class AddHomeworkItemFragment : Fragment() {
                 } else {
                     highPriority = false
                 }
-                val newHomeworkItem = HomeworkItem(assignmentName, dueDate, highPriority, false, viewModel.assignmentID)
-                viewModel.addToList(newHomeworkItem)
-                viewModel.increaseID()
+                val resultBundle = bundleOf()
+                resultBundle.putString("assignmentName", assignmentName)
+                resultBundle.putString("dueDate", dueDate)
+                resultBundle.putBoolean("highPriority", highPriority)
+                resultBundle.putBoolean("isCompleted", false)
+                resultBundle.putInt("id", assignmentID)
+                setFragmentResult("requestKey", bundleOf("bundleKey" to resultBundle))
                 rootview.findNavController().navigateUp()
             }else if(assignmentName == ""){
                 Toast.makeText(activity, "Enter Assignment Name", Toast.LENGTH_LONG).show()

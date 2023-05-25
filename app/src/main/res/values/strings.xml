@@ -38,6 +38,8 @@
     <string name="submit_homework_item">SUBMIT HOMEWORK ITEM</string>
     <string name="high_priority_no_question">HIGH PRIORITY</string>
     <string name="homework_item_successfully_deleted">Homework Item Successfully Deleted!</string>
+    <string name="clear_all_budget_items">CLEAR ALL BUDGET ITEMS</string>
+    <string name="clear_all_homework_items">CLEAR ALL HOMEWORK ITEMS</string>
     <string-array name="spinner_30_day">
         <item>1</item>
         <item>2</item>

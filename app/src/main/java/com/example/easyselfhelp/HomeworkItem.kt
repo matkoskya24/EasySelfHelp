@@ -1,4 +1,4 @@
 package com.example.easyselfhelp
 
-class HomeworkItem(val assignmentName: String, val assignmentDueDate: String, val highPriority: Boolean?, var isCompleted: Boolean, var id: Int) {
+class HomeworkItem(var assignmentName: String = "", var assignmentDueDate: String = "", var highPriority: Boolean? = false, var isCompleted: Boolean = false, var id: Int = -1) {
 }

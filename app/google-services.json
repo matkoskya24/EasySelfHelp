@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "572978235025",
+    "project_id": "easyselfhelp-1bffd",
+    "storage_bucket": "easyselfhelp-1bffd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572978235025:android:6844aab7adeff46076a130",
+        "android_client_info": {
+          "package_name": "com.example.easyselfhelp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "572978235025-6cfkdh294nl1l6bcgrdc0tas2ee6t08a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnrad8KhBKDznE9cx0xS-_aIGsbiHzkds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "572978235025-6cfkdh294nl1l6bcgrdc0tas2ee6t08a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
