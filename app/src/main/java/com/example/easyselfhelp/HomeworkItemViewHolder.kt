@@ -1,6 +1,5 @@
 package com.example.easyselfhelp
 
-import android.annotation.SuppressLint
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.easyselfhelp.databinding.HomeworkItemLayoutBinding
@@ -22,7 +21,7 @@ class HomeworkItemViewHolder(val binding:HomeworkItemLayoutBinding):RecyclerView
         binding.homeworkItemDeleteButton.setOnClickListener {
             currentHomeworkItem.isCompleted = true
             bindHomeworkItem(currentHomeworkItem)
-            val action = homework_planner_fragmentDirections.actionHomeworkPlannerFragmentToHomeworkItemDeleteFragment(currentHomeworkItem.id, currentHomeworkItem.highPriority?: false)
+            val action = homework_planner_fragmentDirections.actionHomeworkPlannerFragmentToHomeworkItemDeleteFragment(currentHomeworkItem.assignmentID, currentHomeworkItem.highPriority?: false)
             binding.root.findNavController().navigate(action)
         }
     }

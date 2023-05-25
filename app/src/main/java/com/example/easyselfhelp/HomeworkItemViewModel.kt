@@ -6,22 +6,24 @@ class HomeworkItemViewModel: ViewModel() {
     private var _assignmentListLow: MutableList<HomeworkItem> = mutableListOf()
     private var _assignmentListHigh: MutableList<HomeworkItem> = mutableListOf()
     private var _assignmentList: MutableList<HomeworkItem> = mutableListOf()
-    private var redFlagIDs: MutableList<Int> = mutableListOf(-1)
+    private var redFlagIDs: MutableList<Int> = mutableListOf()
     val assignmentList get() = _assignmentList
     fun addToList(homeworkItem: HomeworkItem){
-        if(checkForDups(homeworkItem.id)){
-            removeFromList(homeworkItem.id, homeworkItem.highPriority?: false)
-        }else{
-            removeDupsAdvanced(homeworkItem.assignmentName, homeworkItem.assignmentDueDate, homeworkItem.highPriority?: false)
+        if(checkForDups(homeworkItem.assignmentID) || checkForRedFlag(homeworkItem.assignmentID)){
+            removeFromList(homeworkItem.assignmentID, homeworkItem.highPriority?: false)
+            if(checkForRedFlag(homeworkItem.assignmentID)){
+                homeworkItem.isCompleted = true
+            }
         }
-        if(checkForRedFlag(homeworkItem.id)) {
-            if (homeworkItem.highPriority == true) {
+
+            if (homeworkItem.highPriority == true && !homeworkItem.isCompleted) {
                 _assignmentListHigh.add(homeworkItem)
-            } else {
+            } else if(!homeworkItem.isCompleted) {
                 _assignmentListLow.add(homeworkItem)
             }
+
             combineLists()
-        }
+
     }
     private fun combineLists(){
         _assignmentList = mutableListOf()
@@ -57,7 +59,7 @@ class HomeworkItemViewModel: ViewModel() {
     fun removeFromList(id: Int, priority: Boolean){
         var counter = 0
         while(counter < _assignmentList.size){
-            if(_assignmentList[counter].id == id){
+            if(_assignmentList[counter].assignmentID == id){
                 _assignmentList.removeAt(counter)
             }
             counter++
@@ -65,14 +67,14 @@ class HomeworkItemViewModel: ViewModel() {
         counter = 0
         if(priority){
             while (counter < _assignmentListHigh.size){
-                if(_assignmentListHigh[counter].id == id){
+                if(_assignmentListHigh[counter].assignmentID == id){
                     _assignmentListHigh.removeAt(counter)
                 }
                 counter++
             }
         }else{
             while (counter < _assignmentListLow.size){
-                if(_assignmentListLow[counter].id == id){
+                if(_assignmentListLow[counter].assignmentID == id){
                     _assignmentListLow.removeAt(counter)
                 }
                 counter++
@@ -82,7 +84,7 @@ class HomeworkItemViewModel: ViewModel() {
     private fun checkForDups(id: Int): Boolean{
         var counter = 0
         while(counter < _assignmentList.size){
-            if(_assignmentList[counter].id == id){
+            if(_assignmentList[counter].assignmentID == id){
                 return true
             }
             counter++
@@ -90,15 +92,14 @@ class HomeworkItemViewModel: ViewModel() {
         return false
     }
     private fun checkForRedFlag(id: Int): Boolean{
-        var counter = 0
-        while (counter < redFlagIDs.size){
-            if(id == redFlagIDs[counter]){
+        for(Int in redFlagIDs){
+            if(id == Int){
                 return true
             }
         }
         return false
     }
-    private fun removeDupsAdvanced(name: String, dueDate: String, priority: Boolean){
+     fun removeDupsAdvanced(name: String, dueDate: String, priority: Boolean){
         var counter = 0
         while (counter<_assignmentList.size){
             if(_assignmentList[counter].assignmentName == name && _assignmentList[counter].assignmentDueDate == dueDate && _assignmentList[counter].highPriority == priority){

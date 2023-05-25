@@ -60,13 +60,9 @@ class AddHomeworkItemFragment : Fragment() {
                 } else {
                     highPriority = false
                 }
-                val resultBundle = bundleOf()
-                resultBundle.putString("assignmentName", assignmentName)
-                resultBundle.putString("dueDate", dueDate)
-                resultBundle.putBoolean("highPriority", highPriority)
-                resultBundle.putBoolean("isCompleted", false)
-                resultBundle.putInt("id", assignmentID)
-                setFragmentResult("requestKey", bundleOf("bundleKey" to resultBundle))
+                val newHomeworkItem = HomeworkItem(assignmentName, dueDate, highPriority, false, assignmentID)
+                dbRef.child("HomeworkItem").push().setValue(newHomeworkItem)
+                viewModel.addToList(newHomeworkItem)
                 rootview.findNavController().navigateUp()
             }else if(assignmentName == ""){
                 Toast.makeText(activity, "Enter Assignment Name", Toast.LENGTH_LONG).show()

@@ -18,7 +18,7 @@ class BudgetViewHolder(val binding:BudgetItemLayoutBinding ): RecyclerView.ViewH
         binding.budgetDeleteButton.setOnClickListener{
             currentBudgetItem.isCompleted = true
             bindBudgetItem(currentBudgetItem)
-            val action = BudgetFragmentDirections.actionBudgetFragmentToBudgetItemDeleteFragment(currentBudgetItem.id)
+            val action = BudgetFragmentDirections.actionBudgetFragmentToBudgetItemDeleteFragment(currentBudgetItem.budgetID)
             binding.root.findNavController().navigate(action)
         }
     }

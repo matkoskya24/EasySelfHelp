@@ -47,9 +47,9 @@ class BudgetFragment : Fragment() {
                         val name = singleBudgetItemEntry.child("name").getValue().toString()
                         val category = singleBudgetItemEntry.child("category").getValue().toString()
                         val amount = singleBudgetItemEntry.child("amount").getValue().toString().toDouble()
-                        val isCompleted = singleBudgetItemEntry.child("isCompleted").getValue().toString().toBoolean()
-                        val id = singleBudgetItemEntry.child("id").getValue().toString().toInt()
-                        val newBudgetItem = BudgetItem(name, category, amount, isCompleted, id)
+                        val isCompleted = singleBudgetItemEntry.child("isCompleted").getValue().toString()?.toBoolean()
+                        val id = singleBudgetItemEntry.child("budgetID").getValue().toString().toInt()
+                        val newBudgetItem = BudgetItem(name, category, amount, isCompleted?: false, id)
                         viewModel.addToList(newBudgetItem)
                         myAdapter.notifyDataSetChanged()
                     }

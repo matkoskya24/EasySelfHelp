@@ -32,6 +32,7 @@ class HomeworkItemDeleteFragment : Fragment() {
             rootview.findNavController().navigateUp()
         }
         binding.homeworkItemDropTables.setOnClickListener {
+            binding.homeworkItemDeleteViewTitleView.text = "ALL HOMEWORK ITEMS ARE NOW CLEARED"
          dbRef.child("HomeworkItem").removeValue()
          viewModel.dropTables()
         }

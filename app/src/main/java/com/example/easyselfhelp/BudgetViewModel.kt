@@ -1,29 +1,28 @@
 package com.example.easyselfhelp
 
 import androidx.lifecycle.ViewModel
-import androidx.fragment.app.viewModels
-import kotlin.random.Random as Random1
 
 class BudgetViewModel: ViewModel() {
     private var _budgetList: MutableList<BudgetItem> = mutableListOf()
     private var redFlagIDs: MutableList<Int> = mutableListOf(-1)
     val budgetList get() = _budgetList
     fun addToList(budgetItem: BudgetItem){
-        if(checkForDups(budgetItem.id)){
-            removeFromList(budgetItem.id)
+        if(checkForDups(budgetItem.budgetID)){
+            removeFromList(budgetItem.budgetID)
         }else{
             removeDupsAdvanced(budgetItem.name, budgetItem.category, budgetItem.amount)
         }
-        if(!checkForRedFlag(budgetItem.id)) {
+        if(!checkForRedFlag(budgetItem.budgetID)) {
             _budgetList.add(budgetItem)
         }
     }
     fun removeFromList(id: Int){
         var counter = 0
         while(counter < _budgetList.size){
-            if(_budgetList[counter].id == id){
+            if(_budgetList[counter].budgetID == id){
                 _budgetList.removeAt(counter)
             }
+            counter++
         }
     }
     fun dropTables(){
@@ -43,7 +42,7 @@ class BudgetViewModel: ViewModel() {
     private fun checkForDups(id: Int): Boolean{
         var counter = 0
         while(counter < _budgetList.size){
-            if(_budgetList[counter].id == id){
+            if(_budgetList[counter].budgetID == id){
                 return true
             }
             counter++
@@ -56,6 +55,7 @@ class BudgetViewModel: ViewModel() {
                 if(id == redFlagIDs[counter]){
                     return true
                 }
+                counter++
             }
         return false
     }
