@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/layout_style"
     android:backgroundTint="@color/space_cadet"
-    tools:context=".HomeworkItemDeleteFragment">
+    tools:context=".HomeworkItemPackage.HomeworkItemDeleteFragment">
 
     <TextView
         android:id="@+id/homework_item_delete_view_title_view"

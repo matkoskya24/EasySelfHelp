@@ -1,4 +1,4 @@
-package com.example.easyselfhelp
+package com.example.easyselfhelp.HomeworkItemPackage
 
 import android.os.Bundle
 import android.util.Log
@@ -7,15 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.findNavController
 import com.example.easyselfhelp.databinding.FragmentHomeworkPlannerFragmentBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
-import kotlin.math.sin
 
 class homework_planner_fragment : Fragment() {
     private var _binding: FragmentHomeworkPlannerFragmentBinding? = null

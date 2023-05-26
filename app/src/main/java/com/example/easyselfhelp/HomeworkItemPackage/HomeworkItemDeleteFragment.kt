@@ -1,4 +1,4 @@
-package com.example.easyselfhelp
+package com.example.easyselfhelp.HomeworkItemPackage
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +10,6 @@ import androidx.navigation.findNavController
 import com.example.easyselfhelp.databinding.FragmentHomeworkItemDeleteBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 
 class HomeworkItemDeleteFragment : Fragment() {
@@ -26,7 +25,9 @@ class HomeworkItemDeleteFragment : Fragment() {
         val rootview = binding.root
         dbRef = Firebase.database.reference
         val args = HomeworkItemDeleteFragmentArgs.fromBundle(requireArguments())
-//        viewModel.removeFromList(args.id)
+        dbRef.child("HomeworkItem").child(id.toString()).removeValue()
+        viewModel.removeFromList(args.id)
+        viewModel.addRedFlag(args.id)
         binding.homeworkDeleteAcknowledgeButton.setOnClickListener {
             rootview.findNavController().navigateUp()
         }

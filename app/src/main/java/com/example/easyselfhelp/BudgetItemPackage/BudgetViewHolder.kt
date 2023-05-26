@@ -1,4 +1,4 @@
-package com.example.easyselfhelp
+package com.example.easyselfhelp.BudgetItemPackage
 
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView

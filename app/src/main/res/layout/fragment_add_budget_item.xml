@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/layout_style"
     android:backgroundTint="@color/money_green"
-    tools:context=".AddBudgetItemFragment">
+    tools:context=".BudgetItemPackage.AddBudgetItemFragment">
 
     <TextView
         android:id="@+id/textView6"

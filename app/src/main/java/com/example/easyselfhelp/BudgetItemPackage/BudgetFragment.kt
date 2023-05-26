@@ -1,6 +1,5 @@
-package com.example.easyselfhelp
+package com.example.easyselfhelp.BudgetItemPackage
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.setFragmentResultListener
-import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.example.easyselfhelp.databinding.FragmentBudgetFragmentBinding
 import com.google.firebase.database.DataSnapshot
@@ -17,12 +15,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
-import kotlin.math.sin
-import kotlin.Array as Array1
-import com.google.firebase.database.*
-import com.google.firebase.database.ktx.database
 
 class BudgetFragment : Fragment() {
     private var _binding: FragmentBudgetFragmentBinding? = null

@@ -1,4 +1,4 @@
-package com.example.easyselfhelp
+package com.example.easyselfhelp.BudgetItemPackage
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

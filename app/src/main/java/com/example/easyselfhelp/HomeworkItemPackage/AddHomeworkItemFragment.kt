@@ -1,4 +1,4 @@
-package com.example.easyselfhelp
+package com.example.easyselfhelp.HomeworkItemPackage
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,18 +8,13 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.core.os.bundleOf
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.setFragmentResult
 import androidx.navigation.findNavController
+import com.example.easyselfhelp.R
 import com.example.easyselfhelp.databinding.FragmentAddHomeworkItemBinding
 import com.google.firebase.database.DatabaseReference
-import java.time.LocalDate
-import java.time.MonthDay
-import java.time.Year
 import java.util.*
 import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 
 
@@ -43,8 +38,7 @@ class AddHomeworkItemFragment : Fragment() {
         spinnerSetup()
         binding.submitHomeworkButton.setOnClickListener {
             val assignmentName = binding.assignmentNameEditText.text.toString()
-            //TODO: Call function in viewmodel once it's fixed
-            val assignmentID = 0
+            val assignmentID = viewModel.generateNewID()
             var dueYearString = binding.dueYearEditText.text.toString()
             var dueYear = 0
             if(dueYearString != ""){
@@ -62,8 +56,7 @@ class AddHomeworkItemFragment : Fragment() {
                     highPriority = false
                 }
                 val newHomeworkItem = HomeworkItem(assignmentName, dueDate, highPriority, false, assignmentID)
-                dbRef.child("HomeworkItem").push().setValue(newHomeworkItem)
-
+                dbRef.child("HomeworkItem").child(assignmentID.toString()).setValue(newHomeworkItem)
                 rootview.findNavController().navigateUp()
             }else if(assignmentName == ""){
                 Toast.makeText(activity, "Enter Assignment Name", Toast.LENGTH_LONG).show()
@@ -82,7 +75,8 @@ class AddHomeworkItemFragment : Fragment() {
         return rootview
     }
     private fun spinnerSetup(){
-        val monthArrayAdapter = ArrayAdapter.createFromResource(requireContext(), R.array.spinner_12_month, android.R.layout.simple_spinner_item)
+        val monthArrayAdapter = ArrayAdapter.createFromResource(requireContext(),
+            R.array.spinner_12_month, android.R.layout.simple_spinner_item)
         monthArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item)
         binding.monthSpinner.adapter = monthArrayAdapter
         binding.monthSpinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{

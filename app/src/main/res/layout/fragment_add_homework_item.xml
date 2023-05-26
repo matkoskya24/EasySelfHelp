@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/layout_style"
     android:background="@color/space_cadet"
-    tools:context=".AddHomeworkItemFragment">
+    tools:context=".HomeworkItemPackage.AddHomeworkItemFragment">
 
     <TextView
         android:id="@+id/textView8"

@@ -1,6 +1,5 @@
-package com.example.easyselfhelp
+package com.example.easyselfhelp.HomeworkItemPackage
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,12 +13,18 @@ class HomeworkItemViewModel : ViewModel() {
         get() = _assignmentList
 
     fun syncList(list: MutableList<HomeworkItem>) {
+        var counter = 0
+        while(counter < list.size){
+            if(checkForRedFlag(list[counter].assignmentID) || list[counter].isCompleted){
+                list.removeAt(counter)
+            }
+            counter++
+        }
         list.sortByDescending { it.highPriority }
         _assignmentList.value = list
 
     }
 
-    //TODO: Use .value everywhere
     fun generateNewID(): Int {
         var randId: Int = kotlin.random.Random.nextInt()
         while (randId == -1 || checkForDups(randId)) {
@@ -36,7 +41,6 @@ class HomeworkItemViewModel : ViewModel() {
         _assignmentList.value = mutableListOf()
     }
 
-    //TODO: Use .value everywhere
     fun removeFromList(id: Int) {
         var counter = 0
         while (counter < _assignmentList.value?.size ?: 0) {
@@ -46,7 +50,7 @@ class HomeworkItemViewModel : ViewModel() {
             counter++
         }
     }
-    fun checkForDups(id: Int): Boolean{
+    private fun checkForDups(id: Int): Boolean{
         var counter = 0
         while(counter < _assignmentList.value?.size ?: 0){
             if (_assignmentList.value?.get(counter)?.assignmentID == id) {
@@ -56,8 +60,7 @@ class HomeworkItemViewModel : ViewModel() {
         }
         return false
     }
-    //TODO: Use .value everywhere
-    private fun checkForRedFlag(id: Int): Boolean {
+    fun checkForRedFlag(id: Int): Boolean {
         for (Int in redFlagIDs) {
             if (id == Int) {
                 return true

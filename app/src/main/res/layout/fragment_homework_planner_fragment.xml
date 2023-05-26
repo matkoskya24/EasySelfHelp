@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/layout_style"
     android:backgroundTint="@color/space_cadet"
-    tools:context=".homework_planner_fragment">
+    tools:context=".HomeworkItemPackage.homework_planner_fragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_homework"

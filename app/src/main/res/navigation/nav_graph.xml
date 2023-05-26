@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeworkPlannerFragment"
-        android:name="com.example.easyselfhelp.homework_planner_fragment"
+        android:name="com.example.easyselfhelp.HomeworkItemPackage.homework_planner_fragment"
         android:label="fragment_homework_planner_fragment"
         tools:layout="@layout/fragment_homework_planner_fragment" >
         <action
@@ -59,12 +59,12 @@
         tools:layout="@layout/fragment_reading_list" />
     <fragment
         android:id="@+id/addBudgetItemFragment"
-        android:name="com.example.easyselfhelp.AddBudgetItemFragment"
+        android:name="com.example.easyselfhelp.BudgetItemPackage.AddBudgetItemFragment"
         android:label="fragment_add_budget_item"
         tools:layout="@layout/fragment_add_budget_item" />
     <fragment
         android:id="@+id/addHomeworkItemFragment"
-        android:name="com.example.easyselfhelp.AddHomeworkItemFragment"
+        android:name="com.example.easyselfhelp.HomeworkItemPackage.AddHomeworkItemFragment"
         android:label="fragment_add_homework_item"
         tools:layout="@layout/fragment_add_homework_item" />
     <fragment
@@ -90,7 +90,7 @@
     </fragment>
     <fragment
         android:id="@+id/workoutCreator"
-        android:name="com.example.easyselfhelp.WorkoutCreator"
+        android:name="com.example.easyselfhelp.WorkoutItemPackage.WorkoutCreator"
         android:label="fragment_workout_creator"
         tools:layout="@layout/fragment_workout_creator" >
         <action
@@ -109,7 +109,7 @@
         tools:layout="@layout/fragment_track_fitness_results" />
     <fragment
         android:id="@+id/budgetFragment"
-        android:name="com.example.easyselfhelp.BudgetFragment"
+        android:name="com.example.easyselfhelp.BudgetItemPackage.BudgetFragment"
         android:label="BudgetFragment" >
         <action
             android:id="@+id/action_budgetFragment_to_addBudgetItemFragment"
@@ -120,7 +120,7 @@
     </fragment>
     <fragment
         android:id="@+id/budgetItemDeleteFragment"
-        android:name="com.example.easyselfhelp.BudgetItemDeleteFragment"
+        android:name="com.example.easyselfhelp.BudgetItemPackage.BudgetItemDeleteFragment"
         android:label="fragment_budget_item_delete"
         tools:layout="@layout/fragment_budget_item_delete" >
         <argument
@@ -129,7 +129,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeworkItemDeleteFragment"
-        android:name="com.example.easyselfhelp.HomeworkItemDeleteFragment"
+        android:name="com.example.easyselfhelp.HomeworkItemPackage.HomeworkItemDeleteFragment"
         android:label="fragment_homework_item_delete"
         tools:layout="@layout/fragment_homework_item_delete" >
         <argument
