@@ -23,8 +23,9 @@ import kotlin.math.sin
 import kotlin.Array as Array1
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
+
 class BudgetFragment : Fragment() {
-    private var _binding:FragmentBudgetFragmentBinding? = null
+    private var _binding: FragmentBudgetFragmentBinding? = null
     val binding get() = _binding!!
     lateinit var dbRef: DatabaseReference
     private val viewModel: BudgetViewModel by activityViewModels()
@@ -37,40 +38,44 @@ class BudgetFragment : Fragment() {
         dbRef = Firebase.database.reference
         val myAdapter = BudgetItemAdapter(viewModel.budgetList)
         binding.recyclerViewBudget.adapter = myAdapter
-        dbRef.addValueEventListener(object:ValueEventListener{
+        dbRef.child("BudgetItem").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val allDBentries = snapshot.children
                 var numOfItemsAdded = 0
-                for(allBudgetItemEntries in allDBentries){
-                    for (singleBudgetItemEntry in allBudgetItemEntries.children){
-                        numOfItemsAdded++
-                        val name = singleBudgetItemEntry.child("name").getValue().toString()
-                        val category = singleBudgetItemEntry.child("category").getValue().toString()
-                        val amount = singleBudgetItemEntry.child("amount").getValue().toString().toDouble()
-                        val isCompleted = singleBudgetItemEntry.child("isCompleted").getValue().toString()?.toBoolean()
-                        val id = singleBudgetItemEntry.child("budgetID").getValue().toString().toInt()
-                        val newBudgetItem = BudgetItem(name, category, amount, isCompleted?: false, id)
-                        viewModel.addToList(newBudgetItem)
-                        myAdapter.notifyDataSetChanged()
-                    }
+                for (singleBudgetItemEntry in allDBentries) {
+                    numOfItemsAdded++
+                    val name = singleBudgetItemEntry.child("name").getValue().toString()
+                    val category = singleBudgetItemEntry.child("category").getValue().toString()
+                    val amount =
+                        singleBudgetItemEntry.child("amount").getValue().toString().toDouble()
+                    val isCompleted =
+                        singleBudgetItemEntry.child("isCompleted").getValue().toString()
+                            ?.toBoolean()
+                    val id = singleBudgetItemEntry.child("budgetID").getValue().toString().toInt()
+                    val newBudgetItem = BudgetItem(name, category, amount, isCompleted ?: false, id)
+                    viewModel.addToList(newBudgetItem)
+                    myAdapter.notifyDataSetChanged()
                 }
             }
-
             override fun onCancelled(error: DatabaseError) {
                 Log.w("MainFragment", "Failed to read value.", error.toException())
             }
-        } )
-        binding.addBudgetItem.setOnClickListener {
+        })
+        binding.addBudgetItem.setOnClickListener()
+        {
             val action = BudgetFragmentDirections.actionBudgetFragmentToAddBudgetItemFragment()
             rootView.findNavController().navigate(action)
         }
-        setFragmentResultListener("requestKey"){requestKey, bundle ->
+        setFragmentResultListener("requestKey")
+        { requestKey, bundle ->
             var newBudgetItemBundle: Bundle? = bundle.getBundle("bundleKey")
             val name = newBudgetItemBundle?.getString("budgetItemName")
             val category = newBudgetItemBundle?.getString("budgetItemCategory")
             val amount = newBudgetItemBundle?.getDouble("budgetItemAmount")
-            val newBudgetItem = BudgetItem(name.toString(), category.toString(),
-                amount?.toDouble() ?: 0.0, false, viewModel.generateNewID())
+            val newBudgetItem = BudgetItem(
+                name.toString(), category.toString(),
+                amount?.toDouble() ?: 0.0, false, viewModel.generateNewID()
+            )
             dbRef.child("BudgetItem").push().setValue(newBudgetItem)
             viewModel.addToList(newBudgetItem)
             myAdapter.notifyDataSetChanged()

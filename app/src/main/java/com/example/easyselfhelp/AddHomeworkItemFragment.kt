@@ -43,7 +43,8 @@ class AddHomeworkItemFragment : Fragment() {
         spinnerSetup()
         binding.submitHomeworkButton.setOnClickListener {
             val assignmentName = binding.assignmentNameEditText.text.toString()
-            val assignmentID = viewModel.generateNewID()
+            //TODO: Call function in viewmodel once it's fixed
+            val assignmentID = 0
             var dueYearString = binding.dueYearEditText.text.toString()
             var dueYear = 0
             if(dueYearString != ""){
@@ -62,7 +63,7 @@ class AddHomeworkItemFragment : Fragment() {
                 }
                 val newHomeworkItem = HomeworkItem(assignmentName, dueDate, highPriority, false, assignmentID)
                 dbRef.child("HomeworkItem").push().setValue(newHomeworkItem)
-                viewModel.addToList(newHomeworkItem)
+
                 rootview.findNavController().navigateUp()
             }else if(assignmentName == ""){
                 Toast.makeText(activity, "Enter Assignment Name", Toast.LENGTH_LONG).show()
@@ -136,6 +137,8 @@ class AddHomeworkItemFragment : Fragment() {
             return true
         }else if(day <= currentDate && month <= currentMonth && year > currentYear){
             return true
+        }else if(year > 9999 || year < currentYear){
+            return false
         }else{
             return false
         }

@@ -26,8 +26,7 @@ class HomeworkItemDeleteFragment : Fragment() {
         val rootview = binding.root
         dbRef = Firebase.database.reference
         val args = HomeworkItemDeleteFragmentArgs.fromBundle(requireArguments())
-        viewModel.removeFromList(args.id, args.priority)
-        viewModel.addRedFlag(args.id)
+//        viewModel.removeFromList(args.id)
         binding.homeworkDeleteAcknowledgeButton.setOnClickListener {
             rootview.findNavController().navigateUp()
         }

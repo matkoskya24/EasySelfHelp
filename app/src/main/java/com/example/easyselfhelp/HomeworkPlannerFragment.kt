@@ -30,36 +30,59 @@ class homework_planner_fragment : Fragment() {
         val rootView = binding.root
         dbRef = Firebase.database.reference
         binding.addHomeworkItemButton.setOnClickListener {
-            val action = homework_planner_fragmentDirections.actionHomeworkPlannerFragmentToAddHomeworkItemFragment()
+            val action =
+                homework_planner_fragmentDirections.actionHomeworkPlannerFragmentToAddHomeworkItemFragment()
             rootView.findNavController().navigate(action)
         }
-        var myAdapter = HomeworkItemAdapter(viewModel.assignmentList)
-        dbRef.addValueEventListener(object : ValueEventListener{
+
+
+        viewModel.assignmentList.observe(viewLifecycleOwner) { newList ->
+            val myAdapter = HomeworkItemAdapter(newList)
+            binding.recyclerViewHomework.adapter = myAdapter
+        }
+        dbRef.child("HomeworkItem").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                val listFromDB : MutableList<HomeworkItem> = mutableListOf()
                 val allDBentries = snapshot.children
                 var numOfHomeworkItemsAdded = 0
-                for(allHomeworkItemEntries in allDBentries){
-                    for(singleHomeworkItemEntry in allHomeworkItemEntries.children){
-                        numOfHomeworkItemsAdded++
-                        val assignmentName = singleHomeworkItemEntry.child("assignmentName").getValue().toString()
-                        val assignmentDueDate = singleHomeworkItemEntry.child("assignmentDueDate").getValue().toString()
-                        val highPriority = singleHomeworkItemEntry.child("highPriority").getValue().toString().toBoolean()
-                        val isCompleted = singleHomeworkItemEntry.child("isCompleted").getValue().toString().toBoolean()
-                        val id  = singleHomeworkItemEntry.child("assignmentID").getValue().toString().toInt()
-                        val newHomeworkItem = HomeworkItem(assignmentName, assignmentDueDate, highPriority, isCompleted, id)
-                        viewModel.addToList(newHomeworkItem)
-                        myAdapter.notifyDataSetChanged()
-                    }
+                for (singleHomeworkItemEntry in allDBentries) {
+                    numOfHomeworkItemsAdded++
+                    val assignmentName =
+                        singleHomeworkItemEntry.child("assignmentName").getValue().toString()
+                    val assignmentDueDate =
+                        singleHomeworkItemEntry.child("assignmentDueDate").getValue().toString()
+                    val highPriority =
+                        singleHomeworkItemEntry.child("highPriority").getValue().toString()
+                            .toBoolean()
+                    val isCompleted =
+                        singleHomeworkItemEntry.child("isCompleted").getValue().toString()
+                            .toBoolean()
+                    val id =
+                        singleHomeworkItemEntry.child("assignmentID").getValue().toString().toInt()
+                    val newHomeworkItem = HomeworkItem(
+                        assignmentName,
+                        assignmentDueDate,
+                        highPriority,
+                        isCompleted,
+                        id
+                    )
+                    listFromDB.add(newHomeworkItem)
+                    viewModel.syncList(listFromDB)
+
                 }
             }
+
             override fun onCancelled(error: DatabaseError) {
                 Log.w("MainFragment", "Failed to read value.", error.toException())
             }
         })
-        myAdapter = HomeworkItemAdapter(viewModel.assignmentList)
-        binding.recyclerViewHomework.adapter = myAdapter
+
+
+
         return rootView
     }
+
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
