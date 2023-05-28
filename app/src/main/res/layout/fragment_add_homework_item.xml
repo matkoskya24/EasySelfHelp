@@ -44,7 +44,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
-            android:id="@+id/linearLayout2"
+            android:id="@+id/hours_layout_result"
             style="@style/homework_date_layout_style"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
@@ -56,8 +56,7 @@
                 />
             <TextView
                 style="@style/homework_date_text_view_style"
-                android:text="@string/month"
-                android:textSize="@dimen/radio_button_text_size_recycler" />
+                android:text="@string/month" />
         </LinearLayout>
 
         <LinearLayout
@@ -65,7 +64,7 @@
             style="@style/homework_date_layout_style"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/linearLayout4"
-            app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+            app:layout_constraintStart_toEndOf="@+id/hours_layout_result"
             app:layout_constraintTop_toTopOf="parent">
 
             <Spinner
@@ -75,8 +74,7 @@
 
             <TextView
                 style="@style/homework_date_text_view_style"
-                android:text="@string/day"
-                android:textSize="@dimen/radio_button_text_size_recycler" />
+                android:text="@string/day" />
         </LinearLayout>
 
         <LinearLayout
@@ -97,8 +95,7 @@
 
             <TextView
                 style="@style/homework_date_text_view_style"
-                android:text="@string/year"
-                android:textSize="@dimen/radio_button_text_size_recycler" />
+                android:text="@string/year" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

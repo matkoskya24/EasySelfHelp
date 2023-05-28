@@ -43,6 +43,13 @@
     <string name="quotes_title">Some Quotes to Brighten Your Day</string>
     <string name="create_new_workout">Create New Workout</string>
     <string name="book_rec">Positive Book Recommendations</string>
+    <string name="good_job_keep_going">Good Job!! Keep Going!!!</string>
+    <string name="add_workout_result">Add Workout Result</string>
+    <string name="enter_calories_burned_hint">Enter Calories Burned</string>
+    <string name="enter_amount_of_steps_optional_hint">Enter Amount of Steps(optional)</string>
+    <string name="submit_workout_result">Submit Workout Result</string>
+    <string name="enter_duration">Enter Duration</string>
+    <string name="hours">Hours</string>
     <string-array name="spinner_30_day">
         <item>1</item>
         <item>2</item>

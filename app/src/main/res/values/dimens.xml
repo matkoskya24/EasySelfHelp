@@ -26,4 +26,8 @@
     <dimen name="submit_button_height">60dp</dimen>
     <dimen name="add_item_title_text_size">30sp</dimen>
     <dimen name="homework_recycler_dimen_two">90dp</dimen>
+    <dimen name="recycler_view_separator_height">5dp</dimen>
+    <dimen name="progress_view_width">100dp</dimen>
+    <dimen name="progress_view_height">20dp</dimen>
+    <dimen name="progress_view_text_size">15sp</dimen>
 </resources>

@@ -39,6 +39,7 @@ class HomeworkItemViewModel : ViewModel() {
 
     fun dropTables() {
         _assignmentList.value = mutableListOf()
+        redFlagIDs = mutableListOf()
     }
 
     fun removeFromList(id: Int) {
@@ -50,6 +51,14 @@ class HomeworkItemViewModel : ViewModel() {
             counter++
         }
     }
+    fun checkForRedFlag(id: Int): Boolean {
+        for (Int in redFlagIDs) {
+            if (id == Int) {
+                return true
+            }
+        }
+        return false
+    }
     private fun checkForDups(id: Int): Boolean{
         var counter = 0
         while(counter < _assignmentList.value?.size ?: 0){
@@ -57,14 +66,6 @@ class HomeworkItemViewModel : ViewModel() {
                 return true
             }
             counter++
-        }
-        return false
-    }
-    fun checkForRedFlag(id: Int): Boolean {
-        for (Int in redFlagIDs) {
-            if (id == Int) {
-                return true
-            }
         }
         return false
     }

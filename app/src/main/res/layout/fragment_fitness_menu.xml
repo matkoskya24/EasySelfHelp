@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/layout_style"
-    tools:context=".FitnessMenuFragment">
+    tools:context=".FitnessPackage.FitnessMenuFragment">
     <TextView
         android:id="@+id/textView5"
         style="@style/title_view_style"

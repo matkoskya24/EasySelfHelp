@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/layout_style"
+    android:background="@color/periwinkle"
+    tools:context=".FitnessPackage.WorkoutResultPackage.CreateWorkoutProgressResult">
+
+    <TextView
+        android:id="@+id/textView15"
+        style="@style/title_view_style"
+        android:text="@string/add_workout_result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText"
+        style="@style/edit_text_style"
+        android:hint="@string/enter_calories_burned_hint"
+        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <EditText
+        android:id="@+id/editText2"
+        style="@style/edit_text_style"
+        android:hint="@string/enter_amount_of_steps_optional_hint"
+        app:layout_constraintBottom_toTopOf="@+id/duration_constraint_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/duration_constraint_layout"
+        style="@style/homework_constraint_layout_style"
+        app:layout_constraintBottom_toTopOf="@+id/submit_workout_result_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2">
+
+        <TextView
+            android:id="@+id/duration_text_view"
+            style="@style/recycler_title_view_style"
+            android:layout_marginVertical="@dimen/main_menu_button_margin"
+            android:fontFamily="@font/baloo"
+            android:text="@string/enter_duration"
+            android:textColor="@color/orchid"
+            app:layout_constraintBottom_toTopOf="@+id/hours_layout_result"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/hours_layout_result"
+            style="@style/homework_date_layout_style"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/minutes_layout_result"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/hours_edit_text"
+                style="@style/homework_date_edit_text_style" />
+
+            <TextView
+                style="@style/workout_result_duration_text_view_style"
+                android:text="@string/hours"
+                android:textSize="@dimen/radio_button_text_size_recycler" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/minutes_layout_result"
+            style="@style/homework_date_layout_style"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/seconds_layout_result"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/hours_layout_result"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/minutes_edit_text"
+                style="@style/homework_date_edit_text_style" />
+
+            <TextView
+                style="@style/workout_result_duration_text_view_style"
+                android:text="Mins"
+                android:textSize="@dimen/radio_button_text_size_recycler" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/seconds_layout_result"
+            style="@style/homework_date_layout_style"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/minutes_layout_result"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/seconds_edit_text"
+                style="@style/homework_date_edit_text_style" />
+
+            <TextView
+                style="@style/workout_result_duration_text_view_style"
+                android:text="Secs"
+                android:textSize="@dimen/radio_button_text_size_recycler" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/submit_workout_result_button"
+        style="@style/submit_button_style"
+        android:backgroundTint="@color/orchid"
+        android:text="@string/submit_workout_result"
+        android:textColor="@color/periwinkle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/quotesFragment"
-        android:name="com.example.easyselfhelp.QuotesFragment"
+        android:name="com.example.easyselfhelp.QuotePackage.QuotesFragment"
         android:label="fragment_quotes"
         tools:layout="@layout/fragment_quotes" />
     <fragment
@@ -69,44 +69,40 @@
         tools:layout="@layout/fragment_add_homework_item" />
     <fragment
         android:id="@+id/fitnessMenuFragment"
-        android:name="com.example.easyselfhelp.FitnessMenuFragment"
+        android:name="com.example.easyselfhelp.FitnessPackage.FitnessMenuFragment"
         android:label="fragment_fitness_menu"
         tools:layout="@layout/fragment_fitness_menu" >
         <action
-            android:id="@+id/action_fitnessMenuFragment_to_fitnessTrackerFragment"
-            app:destination="@id/fitnessTrackerFragment" />
+            android:id="@+id/action_fitnessMenuFragment_to_addFitnessResultFragment"
+            app:destination="@id/fitnessResultListFragment" />
         <action
-            android:id="@+id/action_fitnessMenuFragment_to_workoutCreator"
-            app:destination="@id/workoutCreator" />
+            android:id="@+id/action_fitnessMenuFragment_to_addWorkoutFragment"
+            app:destination="@id/workoutListFragment" />
     </fragment>
     <fragment
-        android:id="@+id/fitnessTrackerFragment"
-        android:name="com.example.easyselfhelp.fitnessTrackerFragment"
-        android:label="fragment_fitness_tracker"
-        tools:layout="@layout/fragment_add_fitness_result" >
-        <action
-            android:id="@+id/action_fitnessTrackerFragment_to_addFitnessResultFragment"
-            app:destination="@id/addFitnessResultFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/workoutCreator"
-        android:name="com.example.easyselfhelp.WorkoutItemPackage.WorkoutCreator"
-        android:label="fragment_workout_creator"
-        tools:layout="@layout/fragment_workout_creator" >
-        <action
-            android:id="@+id/action_workoutCreator_to_addWorkoutFragment"
-            app:destination="@id/addWorkoutFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/addWorkoutFragment"
+        android:id="@+id/workoutListFragment"
         android:name="com.example.easyselfhelp.AddWorkoutFragment"
-        android:label="fragment_add_workout"
-        tools:layout="@layout/fragment_add_workout" />
+        android:label="fragment_workout_list"
+        tools:layout="@layout/fragment_workout_list" >
+        <action
+            android:id="@+id/action_workoutListFragment_to_addWorkoutItemFragment"
+            app:destination="@id/addWorkoutItemFragment" />
+        <action
+            android:id="@+id/action_workoutListFragment_to_deleteWorkoutItemFragment"
+            app:destination="@id/deleteWorkoutItemFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/addFitnessResultFragment"
+        android:id="@+id/fitnessResultListFragment"
         android:name="com.example.easyselfhelp.AddFitnessResultFragment"
-        android:label="fragment_add_fitness_result"
-        tools:layout="@layout/fragment_track_fitness_results" />
+        android:label="fragment_fitness_result_list"
+        tools:layout="@layout/fragment_track_fitness_results" >
+        <action
+            android:id="@+id/action_fitnessResultListFragment_to_createWorkoutProgressResult"
+            app:destination="@id/createWorkoutProgressResult" />
+        <action
+            android:id="@+id/action_fitnessResultListFragment_to_deleteWorkoutProgressResultFragment"
+            app:destination="@id/deleteWorkoutProgressResultFragment" />
+    </fragment>
     <fragment
         android:id="@+id/budgetFragment"
         android:name="com.example.easyselfhelp.BudgetItemPackage.BudgetFragment"
@@ -139,4 +135,24 @@
             android:name="priority"
             app:argType="boolean" />
     </fragment>
+    <fragment
+        android:id="@+id/addWorkoutItemFragment"
+        android:name="com.example.easyselfhelp.AddWorkoutItemFragment"
+        android:label="fragment_add_workout_item"
+        tools:layout="@layout/fragment_add_workout_item" />
+    <fragment
+        android:id="@+id/deleteWorkoutItemFragment"
+        android:name="com.example.easyselfhelp.DeleteWorkoutItemFragment"
+        android:label="fragment_delete_workout_item"
+        tools:layout="@layout/fragment_delete_workout_item" />
+    <fragment
+        android:id="@+id/createWorkoutProgressResult"
+        android:name="com.example.easyselfhelp.CreateWorkoutProgressResult"
+        android:label="fragment_create_workout_progress_result"
+        tools:layout="@layout/fragment_create_workout_progress_result" />
+    <fragment
+        android:id="@+id/deleteWorkoutProgressResultFragment"
+        android:name="com.example.easyselfhelp.DeleteWorkoutProgressResultFragment"
+        android:label="fragment_delete_workout_progress_result"
+        tools:layout="@layout/fragment_delete_workout_progress_result" />
 </navigation>

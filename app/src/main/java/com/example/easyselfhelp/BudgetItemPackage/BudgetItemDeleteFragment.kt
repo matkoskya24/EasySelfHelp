@@ -26,6 +26,7 @@ class BudgetItemDeleteFragment : Fragment() {
         val rootView = binding.root
         dbRef = Firebase.database.reference
         val args = BudgetItemDeleteFragmentArgs.fromBundle(requireArguments())
+        dbRef.child("BudgetItem").child(args.currentID.toString()).removeValue()
         viewModel.removeFromList(args.currentID)
         viewModel.addRedFlag(args.currentID)
         binding.acknowledgeButton.setOnClickListener {

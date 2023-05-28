@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/layout_style"
     android:background="@color/teal_700"
-    tools:context=".QuotesFragment">
+    tools:context=".QuotePackage.QuotesFragment">
     <TextView
         android:id="@+id/textView7"
         style="@style/title_view_style"

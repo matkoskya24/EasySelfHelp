@@ -143,6 +143,7 @@
         <item name="android:textAlignment">center</item>
         <item name="android:fontFamily">@font/adamina</item>
         <item name="android:textColor">@color/gold</item>
+        <item name="android:textSize">@dimen/radio_button_text_size_recycler</item>
     </style>
     <style name="homework_date_layout_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">wrap_content</item>
@@ -184,5 +185,28 @@
         <item name="android:layout_width">@dimen/homework_recycler_dimen_two</item>
         <item name="android:layout_height">@dimen/homework_recyler_date_dimen_one</item>
         <item name="android:backgroundTint">@color/black</item>
+    </style>
+    <style name="recycler_view_separator" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/recycler_view_separator_height</item>
+        <item name="android:background">@color/gold</item>
+    </style>
+    <style name="progress_view_style" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">@dimen/progress_view_width</item>
+        <item name="android:layout_height">@dimen/progress_view_height</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:fontFamily">@font/baloo</item>
+        <item name="android:textColor">@color/orchid</item>
+        <item name="android:textSize">@dimen/progress_view_text_size</item>
+        <item name="android:layout_marginTop">@dimen/recycler_view_separator_height</item>
+    </style>
+    <style name="workout_result_duration_text_view_style" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:inputType">number</item>
+        <item name="android:background">@color/periwinkle</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:fontFamily">@font/baloo</item>
+        <item name="android:textColor">@color/orchid</item>
     </style>
 </resources>

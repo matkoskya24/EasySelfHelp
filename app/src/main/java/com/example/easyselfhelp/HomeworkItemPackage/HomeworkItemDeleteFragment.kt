@@ -25,7 +25,7 @@ class HomeworkItemDeleteFragment : Fragment() {
         val rootview = binding.root
         dbRef = Firebase.database.reference
         val args = HomeworkItemDeleteFragmentArgs.fromBundle(requireArguments())
-        dbRef.child("HomeworkItem").child(id.toString()).removeValue()
+        dbRef.child("HomeworkItem").child(args.id.toString()).removeValue()
         viewModel.removeFromList(args.id)
         viewModel.addRedFlag(args.id)
         binding.homeworkDeleteAcknowledgeButton.setOnClickListener {
