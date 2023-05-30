@@ -29,11 +29,11 @@
             android:id="@+id/action_mainMenu_to_readingListFragment"
             app:destination="@id/readingListFragment" />
         <action
-            android:id="@+id/action_mainMenu_to_fitnessMenuFragment"
-            app:destination="@id/fitnessMenuFragment" />
-        <action
             android:id="@+id/action_mainMenu_to_budgetFragment"
             app:destination="@id/budgetFragment" />
+        <action
+            android:id="@+id/action_mainMenu_to_fitnessResultListFragment"
+            app:destination="@id/fitnessResultListFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeworkPlannerFragment"
@@ -68,30 +68,6 @@
         android:label="fragment_add_homework_item"
         tools:layout="@layout/fragment_add_homework_item" />
     <fragment
-        android:id="@+id/fitnessMenuFragment"
-        android:name="com.example.easyselfhelp.FitnessPackage.FitnessMenuFragment"
-        android:label="fragment_fitness_menu"
-        tools:layout="@layout/fragment_fitness_menu" >
-        <action
-            android:id="@+id/action_fitnessMenuFragment_to_addWorkoutFragment"
-            app:destination="@id/workoutListFragment" />
-        <action
-            android:id="@+id/action_fitnessMenuFragment_to_fitnessResultListFragment"
-            app:destination="@id/fitnessResultListFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/workoutListFragment"
-        android:name="com.example.easyselfhelp.FitnessPackage.WorkoutItemPackage.AddWorkoutFragment"
-        android:label="fragment_workout_list"
-        tools:layout="@layout/fragment_workout_list" >
-        <action
-            android:id="@+id/action_workoutListFragment_to_addWorkoutItemFragment"
-            app:destination="@id/addWorkoutItemFragment" />
-        <action
-            android:id="@+id/action_workoutListFragment_to_deleteWorkoutItemFragment"
-            app:destination="@id/deleteWorkoutItemFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/budgetFragment"
         android:name="com.example.easyselfhelp.BudgetItemPackage.BudgetFragment"
         android:label="BudgetFragment" >
@@ -123,16 +99,6 @@
             android:name="priority"
             app:argType="boolean" />
     </fragment>
-    <fragment
-        android:id="@+id/addWorkoutItemFragment"
-        android:name="com.example.easyselfhelp.FitnessPackage.WorkoutItemPackage.AddWorkoutItemFragment"
-        android:label="fragment_add_workout_item"
-        tools:layout="@layout/fragment_add_workout_item" />
-    <fragment
-        android:id="@+id/deleteWorkoutItemFragment"
-        android:name="com.example.easyselfhelp.FitnessPackage.WorkoutItemPackage.DeleteWorkoutItemFragment"
-        android:label="fragment_delete_workout_item"
-        tools:layout="@layout/fragment_delete_workout_item" />
     <fragment
         android:id="@+id/createWorkoutProgressResult"
         android:name="com.example.easyselfhelp.FitnessPackage.WorkoutResultPackage.CreateWorkoutProgressResult"

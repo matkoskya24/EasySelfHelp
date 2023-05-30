@@ -23,7 +23,7 @@ class MainMenu : Fragment() {
             rootView.findNavController().navigate(action)
         }
         binding.fitnessTrackerButton.setOnClickListener {
-            val action = MainMenuDirections.actionMainMenuToFitnessMenuFragment()
+            val action = MainMenuDirections.actionMainMenuToFitnessResultListFragment()
             rootView.findNavController().navigate(action)
         }
         binding.homeworkPlannerButton.setOnClickListener {
