@@ -54,7 +54,7 @@
         tools:layout="@layout/fragment_quotes" />
     <fragment
         android:id="@+id/readingListFragment"
-        android:name="com.example.easyselfhelp.ReadingListFragment"
+        android:name="com.example.easyselfhelp.ReadingPackage.ReadingListFragment"
         android:label="fragment_reading_list"
         tools:layout="@layout/fragment_reading_list" />
     <fragment

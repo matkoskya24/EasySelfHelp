@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/red">
+
+    <ImageView
+        android:id="@+id/book_image_view"
+        style="@style/recycler_view_image_view"
+        android:src="@drawable/ic_baseline_menu_book_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/book_title_text_view"
+        style="@style/recycler_title_view_style"
+        android:textSize="@dimen/progress_view_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/book_subtitle_text_view"
+        android:layout_marginLeft="@dimen/main_menu_button_margin"
+        android:textAlignment="viewStart"
+        app:layout_constraintStart_toEndOf="@+id/book_image_view"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Book Title" />
+
+    <TextView
+        android:id="@+id/book_subtitle_text_view"
+        style="@style/recycler_sub1_view_style"
+        android:textSize="@dimen/progress_view_text_size"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toTopOf="@+id/book_author_text_view"
+
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/book_title_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/book_title_text_view"
+        tools:text="Book Subtitle" />
+
+    <TextView
+        android:id="@+id/book_author_text_view"
+        style="@style/recycler_sub2_view_style"
+        android:textAlignment="viewStart"
+        android:textSize="@dimen/progress_view_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/book_subtitle_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/book_subtitle_text_view"
+        tools:text="Author Name" />
+
+    <View
+        android:id="@+id/view"
+        style="@style/recycler_view_separator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
