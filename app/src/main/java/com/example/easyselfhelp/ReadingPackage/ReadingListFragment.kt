@@ -11,7 +11,7 @@ import androidx.lifecycle.Observer
 
 
 class ReadingListFragment : Fragment() {
-    var _binding: FragmentReadingListBinding? = null
+    private var _binding: FragmentReadingListBinding? = null
     val binding get() = _binding!!
     private val viewModel: BookViewModel by viewModels()
     override fun onCreateView(

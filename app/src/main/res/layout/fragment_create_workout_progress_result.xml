@@ -15,22 +15,24 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/calories_edit_text"
         style="@style/edit_text_style"
         android:hint="@string/enter_calories_burned_hint"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/steps_edit_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/steps_edit_text"
         style="@style/edit_text_style"
+        android:inputType="number"
         android:hint="@string/enter_amount_of_steps_optional_hint"
         app:layout_constraintBottom_toTopOf="@+id/duration_constraint_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/calories_edit_text" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/duration_constraint_layout"
@@ -38,7 +40,7 @@
         app:layout_constraintBottom_toTopOf="@+id/submit_workout_result_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2">
+        app:layout_constraintTop_toBottomOf="@+id/steps_edit_text">
 
         <TextView
             android:id="@+id/duration_text_view"
@@ -57,7 +59,6 @@
             style="@style/homework_date_layout_style"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/minutes_layout_result"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -75,7 +76,6 @@
             style="@style/homework_date_layout_style"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/seconds_layout_result"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/hours_layout_result"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -94,7 +94,6 @@
             style="@style/homework_date_layout_style"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/minutes_layout_result"
             app:layout_constraintTop_toTopOf="parent">
 

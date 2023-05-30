@@ -73,15 +73,15 @@
         android:label="fragment_fitness_menu"
         tools:layout="@layout/fragment_fitness_menu" >
         <action
-            android:id="@+id/action_fitnessMenuFragment_to_addFitnessResultFragment"
-            app:destination="@id/fitnessResultListFragment" />
-        <action
             android:id="@+id/action_fitnessMenuFragment_to_addWorkoutFragment"
             app:destination="@id/workoutListFragment" />
+        <action
+            android:id="@+id/action_fitnessMenuFragment_to_fitnessResultListFragment"
+            app:destination="@id/fitnessResultListFragment" />
     </fragment>
     <fragment
         android:id="@+id/workoutListFragment"
-        android:name="com.example.easyselfhelp.AddWorkoutFragment"
+        android:name="com.example.easyselfhelp.FitnessPackage.WorkoutItemPackage.AddWorkoutFragment"
         android:label="fragment_workout_list"
         tools:layout="@layout/fragment_workout_list" >
         <action
@@ -90,18 +90,6 @@
         <action
             android:id="@+id/action_workoutListFragment_to_deleteWorkoutItemFragment"
             app:destination="@id/deleteWorkoutItemFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/fitnessResultListFragment"
-        android:name="com.example.easyselfhelp.AddFitnessResultFragment"
-        android:label="fragment_fitness_result_list"
-        tools:layout="@layout/fragment_track_fitness_results" >
-        <action
-            android:id="@+id/action_fitnessResultListFragment_to_createWorkoutProgressResult"
-            app:destination="@id/createWorkoutProgressResult" />
-        <action
-            android:id="@+id/action_fitnessResultListFragment_to_deleteWorkoutProgressResultFragment"
-            app:destination="@id/deleteWorkoutProgressResultFragment" />
     </fragment>
     <fragment
         android:id="@+id/budgetFragment"
@@ -137,22 +125,33 @@
     </fragment>
     <fragment
         android:id="@+id/addWorkoutItemFragment"
-        android:name="com.example.easyselfhelp.AddWorkoutItemFragment"
+        android:name="com.example.easyselfhelp.FitnessPackage.WorkoutItemPackage.AddWorkoutItemFragment"
         android:label="fragment_add_workout_item"
         tools:layout="@layout/fragment_add_workout_item" />
     <fragment
         android:id="@+id/deleteWorkoutItemFragment"
-        android:name="com.example.easyselfhelp.DeleteWorkoutItemFragment"
+        android:name="com.example.easyselfhelp.FitnessPackage.WorkoutItemPackage.DeleteWorkoutItemFragment"
         android:label="fragment_delete_workout_item"
         tools:layout="@layout/fragment_delete_workout_item" />
     <fragment
         android:id="@+id/createWorkoutProgressResult"
-        android:name="com.example.easyselfhelp.CreateWorkoutProgressResult"
+        android:name="com.example.easyselfhelp.FitnessPackage.WorkoutResultPackage.CreateWorkoutProgressResult"
         android:label="fragment_create_workout_progress_result"
         tools:layout="@layout/fragment_create_workout_progress_result" />
     <fragment
+        android:id="@+id/fitnessResultListFragment"
+        android:name="com.example.easyselfhelp.FitnessPackage.WorkoutResultPackage.FitnessResultListFragment"
+        android:label="fragment_track_fitness_results"
+        tools:layout="@layout/fragment_track_fitness_results" >
+        <action
+            android:id="@+id/action_fitnessResultListFragment_to_createWorkoutProgressResult"
+            app:destination="@id/createWorkoutProgressResult" />
+        <action
+            android:id="@+id/action_fitnessResultListFragment_to_deleteWorkoutProgressResultFragment"
+            app:destination="@id/deleteWorkoutProgressResultFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/deleteWorkoutProgressResultFragment"
-        android:name="com.example.easyselfhelp.DeleteWorkoutProgressResultFragment"
-        android:label="fragment_delete_workout_progress_result"
-        tools:layout="@layout/fragment_delete_workout_progress_result" />
+        android:name="com.example.easyselfhelp.FitnessPackage.WorkoutResultPackage.DeleteWorkoutProgressResultFragment"
+        android:label="DeleteWorkoutProgressResultFragment" />
 </navigation>

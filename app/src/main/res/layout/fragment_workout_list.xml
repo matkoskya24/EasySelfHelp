@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/layout_style"
     android:background="@color/periwinkle"
-    tools:context=".AddWorkoutFragment">
+    tools:context=".FitnessPackage.WorkoutItemPackage.AddWorkoutFragment">
 
     <TextView
         android:id="@+id/textView12"
@@ -29,11 +29,11 @@
         android:textColor="@color/orchid"
         android:textSize="@dimen/add_item_title_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/add_workout_button"
+        app:layout_constraintEnd_toStartOf="@+id/add_workout_result_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/add_workout_button" />
+        app:layout_constraintTop_toTopOf="@+id/add_workout_result_button" />
     <ImageButton
-        android:id="@+id/add_workout_button"
+        android:id="@+id/add_workout_result_button"
         style="@style/add_item_image_button"
         android:backgroundTint="@color/periwinkle"
         app:layout_constraintBottom_toBottomOf="parent"

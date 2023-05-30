@@ -1,17 +1,18 @@
 package com.example.easyselfhelp.FitnessPackage.WorkoutResultPackage
 
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 
-class WorkoutResultViewModel {
+class WorkoutResultViewModel : ViewModel() {
     private val _workoutResultList: MutableLiveData<MutableList<WorkoutResult>> = MutableLiveData(
         mutableListOf()
     )
-    private var redFlagIDs: MutableList<Int> = mutableListOf()
+    private var redFlagIDs: MutableList<Int> = mutableListOf(-1)
     val workoutResultList get() = _workoutResultList
     fun syncList(list: MutableList<WorkoutResult>){
         var counter = 0
         while(counter < list.size){
-            if(checkForRedFlags(list[counter].workoutID) || list[counter].isDeleted){
+            if(checkForRedFlags(list[counter].workoutID)){
                 list.removeAt(counter)
             }
             counter++

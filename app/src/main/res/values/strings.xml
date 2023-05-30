@@ -50,6 +50,8 @@
     <string name="submit_workout_result">Submit Workout Result</string>
     <string name="enter_duration">Enter Duration</string>
     <string name="hours">Hours</string>
+    <string name="add_workout_result_text">Add Workout Result</string>
+    <string name="clear_workout_results">Clear Workout Results</string>
     <string-array name="spinner_30_day">
         <item>1</item>
         <item>2</item>

@@ -5,56 +5,108 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import com.example.easyselfhelp.R
+import com.example.easyselfhelp.databinding.FragmentCreateWorkoutProgressResultBinding
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+import java.util.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [CreateWorkoutProgressResult.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CreateWorkoutProgressResult : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
+    private var _binding: FragmentCreateWorkoutProgressResultBinding? = null
+    val binding get() = _binding!!
+    lateinit var dbRef: DatabaseReference
+    private val viewModel: WorkoutResultViewModel by activityViewModels()
+    private val currentDate = "${Calendar.getInstance().get(Calendar.DAY_OF_MONTH)}-${Calendar.getInstance().get(Calendar.MONTH) + 1}-${Calendar.getInstance().get(Calendar.YEAR)}"
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_workout_progress_result, container, false)
+        _binding = FragmentCreateWorkoutProgressResultBinding.inflate(inflater, container, false)
+        val rootview = binding.root
+        dbRef = Firebase.database.reference
+        binding.submitWorkoutResultButton.setOnClickListener {
+            val workoutResultID = viewModel.generateNewID()
+            val calories = binding.caloriesEditText.text.toString()
+            val steps = binding.caloriesEditText.text.toString()
+            var hours = binding.hoursEditText.text.toString()
+            var minutes = binding.minutesEditText.text.toString()
+            var secs = binding.secondsEditText.text.toString()
+            val durExists = ((hours != "") || minutes != "" || secs != "")
+            if (calories != "" || steps != "" || durExists) {
+                var viewNum = 0
+                var caloriesInt = -1
+                var stepsInt = -1
+                var dur = ""
+                if (calories != "") {
+                    caloriesInt = calories.toInt()
+                    viewNum++
+                }
+                if (steps != "") {
+                    stepsInt = steps.toInt()
+                    viewNum++
+                }
+                if (durExists) {
+                    var hoursInt = -1
+                    var minsInt = -1
+                    var secsInt = -1
+                    if (hours != "") {
+                        if(hours.toInt() >= 0) {
+                            hoursInt = hours.toInt()
+                        }else{
+                            //TODO add toast
+                        }
+                    }
+                    if (minutes != "") {
+                        if(minutes.toInt() >= 0 && minutes.toInt() < 60) {
+                            minsInt = minutes.toInt()
+                        }else{
+                            //TODO add toast
+                        }
+                    }
+                    if(secs != ""){
+                        if(secs.toInt() >=0 && secs.toInt() < 60){
+                            secsInt = secs.toInt()
+                        }else{
+                            //TODO add toast
+                        }
+                    }
+                    if(hoursInt >=0 && minsInt >=0 && secsInt >= 0){
+                        var hoursFormat = ""
+                        var minutesFormat = ""
+                        var secsFormat = ""
+                        if(hoursInt < 10){
+                            hoursFormat = "0${hoursInt}"
+                        }else{
+                            hoursFormat = hoursInt.toString()
+                        }
+                        if(minsInt < 10){
+                            minutesFormat = "0${minsInt}"
+                        }else{
+                            minutesFormat = minsInt.toString()
+                        }
+                        if(secsInt < 10){
+                            secsFormat = "0${secsInt.toString()}"
+                        }else{
+                            secsFormat = secsInt.toString()
+                        }
+                        dur = "${hoursFormat}:${minutesFormat}:${secsFormat}"
+                        viewNum++
+                    }
+                }
+                val newWorkoutResult = WorkoutResult(currentDate, caloriesInt, stepsInt, dur, workoutResultID, viewNum)
+                dbRef.child("WorkoutResult").child(workoutResultID.toString()).setValue(newWorkoutResult)
+            }else{
+                //TODO make toast
+            }
+        }
+        return rootview
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CreateWorkoutProgressResult.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CreateWorkoutProgressResult().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

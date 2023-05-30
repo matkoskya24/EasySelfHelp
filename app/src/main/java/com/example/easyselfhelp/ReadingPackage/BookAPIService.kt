@@ -7,9 +7,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
-private const val BASE_URL = "https://www.googleapis.com/books/v1/"
-private const val QUERY_STRING = "volumes?q=self_help"
-private val moshi = Moshi.Builder()
+internal const val BASE_URL = "https://www.googleapis.com/books/v1/"
+internal const val QUERY_STRING = "volumes?q=self_help"
+internal val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .build()
 private val retrofit = Retrofit.Builder()
