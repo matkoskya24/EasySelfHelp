@@ -69,7 +69,7 @@
             <TextView
                 style="@style/workout_result_duration_text_view_style"
                 android:text="@string/hours"
-                android:textSize="@dimen/radio_button_text_size_recycler" />
+                android:textSize="@dimen/main_menu_button_text_size" />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/minutes_layout_result"
@@ -86,7 +86,7 @@
             <TextView
                 style="@style/workout_result_duration_text_view_style"
                 android:text="Mins"
-                android:textSize="@dimen/radio_button_text_size_recycler" />
+                android:textSize="@dimen/main_menu_button_text_size" />
         </LinearLayout>
 
         <LinearLayout
@@ -104,7 +104,7 @@
             <TextView
                 style="@style/workout_result_duration_text_view_style"
                 android:text="Secs"
-                android:textSize="@dimen/radio_button_text_size_recycler" />
+                android:textSize="@dimen/main_menu_button_text_size" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

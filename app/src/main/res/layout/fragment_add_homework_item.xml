@@ -131,7 +131,7 @@
                 android:buttonTint="@color/go_green"
                 android:text="@string/yes"
                 android:textColor="@color/go_green"
-                android:textSize="@dimen/radio_button_text_size_recycler" />
+                android:textSize="@dimen/main_menu_button_text_size" />
 
             <RadioButton
                 android:id="@+id/high_priority_no"

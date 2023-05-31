@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">EasySelfHelp</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home_screen_banner_text">EASY SELF HELP</string>
     <string name="tolkien_quote">Even the smallest person can change the course of the future \n- J.R.R. Tolkien</string>
     <string name="home_screen_button_string">Begin Your Journey</string>
@@ -54,6 +53,7 @@
     <string name="clear_workout_results">Clear Workout Results</string>
     <string name="are_you_sure_you_want_to_clear_all_workout_results">ARE YOU SURE YOU WANT TO CLEAR ALL WORKOUT RESULTS?</string>
     <string name="go_back">GO BACK</string>
+    <string name="dev_blurb">Aidan Matkosky is an amateur programmer, photographer, musician, rail enthusiast, and actor from Scranton, PA. As the \'therapist\' of his friend group, Aidan enjoys seeing his work help others succeed, which is why he chose to create this app.</string>
     <string-array name="spinner_30_day">
         <item>1</item>
         <item>2</item>

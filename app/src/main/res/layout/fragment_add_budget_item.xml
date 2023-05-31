@@ -10,7 +10,7 @@
         android:id="@+id/textView6"
         style="@style/recycler_title_view_style"
         android:text="@string/add_new_budget_item"
-        android:textSize="@dimen/recycler_title_text_size"
+        android:textSize="@dimen/add_item_text_view_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

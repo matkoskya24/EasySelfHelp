@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.example.easyselfhelp.databinding.FragmentAboutMeBinding
 
 class AboutMeFragment : Fragment() {
@@ -16,6 +17,13 @@ class AboutMeFragment : Fragment() {
     ): View? {
         _binding = FragmentAboutMeBinding.inflate(inflater, container, false)
         val rootview = binding.root
+        binding.goBackDevFragment.setOnClickListener {
+            rootview.findNavController().navigateUp()
+        }
         return rootview
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
