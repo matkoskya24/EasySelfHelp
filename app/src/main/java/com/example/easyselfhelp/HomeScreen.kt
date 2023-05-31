@@ -23,4 +23,8 @@ class HomeScreen : Fragment() {
         }
         return rootView
     }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

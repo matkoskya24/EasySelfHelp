@@ -18,7 +18,6 @@ class BookViewHolder(val binding: BookItemLayoutBinding):RecyclerView.ViewHolder
     fun bindBook(book: Book){
         currentBook = book
         val title = book.title
-        val subtitle = book.subtitle
         val uri = book.imageuri.toUri().buildUpon().scheme("https").build()
         var author: String = ""
         var counter = 0
@@ -31,7 +30,6 @@ class BookViewHolder(val binding: BookItemLayoutBinding):RecyclerView.ViewHolder
         }
         Glide.with(itemView).load(uri).into(binding.bookImageView)
         binding.bookTitleTextView.text = title
-        binding.bookSubtitleTextView.text = book.subtitle
         binding.bookAuthorTextView.text = author
     }
 }

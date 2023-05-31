@@ -7,7 +7,7 @@ class WorkoutResultViewHolder(val binding: WorkoutResultItemLayoutBinding):Recyc
     private lateinit var currentWorkoutResult: WorkoutResult
     fun bindWorkoutResult(workoutResult: WorkoutResult){
         currentWorkoutResult = workoutResult
-        if(!(currentWorkoutResult.workoutID == -1) && !(currentWorkoutResult.viewNum > 0)){
+        if(currentWorkoutResult.workoutID != -1 && currentWorkoutResult.viewNum > 0){
             binding.resultDateView.text = currentWorkoutResult.date
             val calorieText = "Cal: " + currentWorkoutResult.calories
             val stepText = "Steps: " + currentWorkoutResult.steps

@@ -120,10 +120,7 @@ class AddHomeworkItemFragment : Fragment() {
             override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
     }
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
+
     private fun checkIfDateValid(day: Int, month: Int, year: Int): Boolean{
         if(day >= currentDate && month >= currentMonth && year >= currentYear){
             return true
@@ -136,6 +133,10 @@ class AddHomeworkItemFragment : Fragment() {
         }else{
             return false
         }
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

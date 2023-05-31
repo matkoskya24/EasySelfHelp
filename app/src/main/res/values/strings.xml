@@ -52,6 +52,8 @@
     <string name="hours">Hours</string>
     <string name="add_workout_result_text">Add Workout Result</string>
     <string name="clear_workout_results">Clear Workout Results</string>
+    <string name="are_you_sure_you_want_to_clear_all_workout_results">ARE YOU SURE YOU WANT TO CLEAR ALL WORKOUT RESULTS?</string>
+    <string name="go_back">GO BACK</string>
     <string-array name="spinner_30_day">
         <item>1</item>
         <item>2</item>

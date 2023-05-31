@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
 import com.example.easyselfhelp.R
 import com.example.easyselfhelp.databinding.FragmentCreateWorkoutProgressResultBinding
 import com.google.firebase.database.DatabaseReference
@@ -19,7 +20,7 @@ class CreateWorkoutProgressResult : Fragment() {
     val binding get() = _binding!!
     lateinit var dbRef: DatabaseReference
     private val viewModel: WorkoutResultViewModel by activityViewModels()
-    private val currentDate = "${Calendar.getInstance().get(Calendar.DAY_OF_MONTH)}-${Calendar.getInstance().get(Calendar.MONTH) + 1}-${Calendar.getInstance().get(Calendar.YEAR)}"
+    private val currentDate = "${Calendar.getInstance().get(Calendar.MONTH) + 1}-${Calendar.getInstance().get(Calendar.DAY_OF_MONTH)}-${Calendar.getInstance().get(Calendar.YEAR)}"
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,7 +31,7 @@ class CreateWorkoutProgressResult : Fragment() {
         binding.submitWorkoutResultButton.setOnClickListener {
             val workoutResultID = viewModel.generateNewID()
             val calories = binding.caloriesEditText.text.toString()
-            val steps = binding.caloriesEditText.text.toString()
+            val steps = binding.stepsEditText.text.toString()
             var hours = binding.hoursEditText.text.toString()
             var minutes = binding.minutesEditText.text.toString()
             var secs = binding.secondsEditText.text.toString()
@@ -98,6 +99,7 @@ class CreateWorkoutProgressResult : Fragment() {
                 }
                 val newWorkoutResult = WorkoutResult(currentDate, caloriesInt, stepsInt, dur, workoutResultID, viewNum)
                 dbRef.child("WorkoutResult").child(workoutResultID.toString()).setValue(newWorkoutResult)
+                rootview.findNavController().navigateUp()
             }else{
                 //TODO make toast
             }

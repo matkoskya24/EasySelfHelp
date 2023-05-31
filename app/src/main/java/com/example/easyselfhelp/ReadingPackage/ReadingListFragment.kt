@@ -27,5 +27,9 @@ class ReadingListFragment : Fragment() {
         })
         return rootview
     }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
 }
