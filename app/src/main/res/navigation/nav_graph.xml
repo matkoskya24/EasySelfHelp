@@ -23,9 +23,6 @@
             android:id="@+id/action_mainMenu_to_homework_planner_fragment"
             app:destination="@id/homeworkPlannerFragment" />
         <action
-            android:id="@+id/action_mainMenu_to_quotesFragment"
-            app:destination="@id/quotesFragment" />
-        <action
             android:id="@+id/action_mainMenu_to_readingListFragment"
             app:destination="@id/readingListFragment" />
         <action
@@ -34,6 +31,9 @@
         <action
             android:id="@+id/action_mainMenu_to_fitnessResultListFragment"
             app:destination="@id/fitnessResultListFragment" />
+        <action
+            android:id="@+id/action_mainMenu_to_aboutMeFragment"
+            app:destination="@id/aboutMeFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeworkPlannerFragment"
@@ -47,11 +47,7 @@
             android:id="@+id/action_homework_planner_fragment_to_homeworkItemDeleteFragment"
             app:destination="@id/homeworkItemDeleteFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/quotesFragment"
-        android:name="com.example.easyselfhelp.QuotePackage.QuotesFragment"
-        android:label="fragment_quotes"
-        tools:layout="@layout/fragment_quotes" />
+
     <fragment
         android:id="@+id/readingListFragment"
         android:name="com.example.easyselfhelp.ReadingPackage.ReadingListFragment"
@@ -120,4 +116,9 @@
         android:id="@+id/deleteWorkoutProgressResultFragment"
         android:name="com.example.easyselfhelp.FitnessPackage.WorkoutResultPackage.DeleteWorkoutProgressResultFragment"
         android:label="DeleteWorkoutProgressResultFragment" />
+    <fragment
+        android:id="@+id/aboutMeFragment"
+        android:name="com.example.easyselfhelp.AboutMeFragment"
+        android:label="fragment_about_me"
+        tools:layout="@layout/fragment_about_me" />
 </navigation>

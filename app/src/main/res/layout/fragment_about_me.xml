@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/layout_style"
+    tools:context=".AboutMeFragment">
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/title_view_style"
+        android:text="@string/meet_the_developer"
+        android:textColor="@color/space_cadet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_marginTop="@dimen/main_menu_button_margin"
+        android:layout_width="@dimen/dev_image_view_dimen"
+        android:layout_height="@dimen/dev_image_view_dimen"
+        android:scaleType="centerCrop"
+        android:src="@drawable/engineer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        style="@style/text_view_style"
+        android:layout_marginTop="@dimen/main_menu_button_margin"
+        android:text="Aidan "
+        android:textColor="@color/space_cadet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

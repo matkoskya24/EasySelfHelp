@@ -70,37 +70,36 @@
         </LinearLayout>
         <LinearLayout style="@style/main_menu_row_style">
             <LinearLayout style="@style/main_menu_button_style">
-                <ImageButton
-                    android:id="@+id/positive_quotes_button"
-                    style="@style/main_menu_image_button_style"
-                    android:src="@drawable/happy_quotes_icon" />
-                <TextView
-                    style="@style/main_menu_button_text_view_style"
-                    android:text="@string/positive_quotes" />
             </LinearLayout>
-            <LinearLayout style="@style/main_menu_button_style">
+            <LinearLayout style="@style/main_menu_button_style"
+                android:layout_weight="1"
+                >
                 <ImageButton
                     android:id="@+id/reading_list_button"
                     style="@style/main_menu_image_button_style"
                     android:src="@drawable/ic_baseline_menu_book_24" />
                 <TextView
+                    android:layout_width="@dimen/main_menu_image_button_dimen"
                     style="@style/main_menu_button_text_view_style"
-                    android:text="@string/reading_list" />
+                    android:text="@string/reading_list"
+                    />
             </LinearLayout>
-            <LinearLayout style="@style/main_menu_button_style">
+            <LinearLayout style="@style/main_menu_button_style"
+                android:layout_weight="1">
                 <ImageButton
                     android:id="@+id/self_help_video_button"
                     style="@style/main_menu_image_button_style"
                     android:src="@drawable/ic_baseline_ondemand_video_24" />
                 <TextView
                     style="@style/main_menu_button_text_view_style"
+                    android:layout_width="@dimen/main_menu_image_button_dimen"
                     android:text="@string/self_help_videos" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/meet_the_dev_button"
         style="@style/main_menu_image_button_style"
         android:layout_width="@dimen/dev_icon_dimen"
         android:layout_height="@dimen/dev_icon_dimen"
@@ -114,7 +113,7 @@
         android:text="@string/meet_the_developer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+        app:layout_constraintTop_toBottomOf="@+id/meet_the_dev_button" />
 
 
 

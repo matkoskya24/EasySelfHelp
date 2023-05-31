@@ -31,4 +31,5 @@
     <dimen name="progress_view_height">20dp</dimen>
     <dimen name="progress_view_text_size">15sp</dimen>
     <dimen name="add_workout_result_text_size">32sp</dimen>
+    <dimen name="dev_image_view_dimen">300dp</dimen>
 </resources>
