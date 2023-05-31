@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     style="@style/layout_style">
 
     <TextView
         android:id="@+id/textView3"
         style="@style/title_view_style"
-        android:text="Main Menu"
+        android:text="@string/main_menu"
         android:textColor="@color/space_cadet"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,6 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
     <LinearLayout
         android:id="@+id/Button_Holder"
         style="@style/main_menu_row_style"
@@ -39,57 +39,72 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3">
+
         <LinearLayout style="@style/main_menu_row_style">
+
             <LinearLayout style="@style/main_menu_button_style">
+
                 <ImageButton
                     android:id="@+id/easy_budget_button"
                     style="@style/main_menu_image_button_style"
                     android:src="@drawable/mr_krabs_paradise" />
+
                 <TextView
                     style="@style/main_menu_button_text_view_style"
                     android:text="@string/easy_budget" />
             </LinearLayout>
+
             <LinearLayout style="@style/main_menu_button_style">
+
                 <ImageButton
                     android:id="@+id/homework_planner_button"
                     style="@style/main_menu_image_button_style"
                     android:src="@drawable/homework_planner_icon" />
+
                 <TextView
                     style="@style/main_menu_button_text_view_style"
                     android:text="@string/homework_planner" />
             </LinearLayout>
+
             <LinearLayout style="@style/main_menu_button_style">
+
                 <ImageButton
                     android:id="@+id/fitness_tracker_button"
                     style="@style/main_menu_image_button_style"
                     android:src="@drawable/fitness_tracker_icon" />
+
                 <TextView
                     style="@style/main_menu_button_text_view_style"
                     android:text="@string/fitness_tracker" />
             </LinearLayout>
         </LinearLayout>
+
         <LinearLayout style="@style/main_menu_row_style">
-            <LinearLayout style="@style/main_menu_button_style">
-            </LinearLayout>
-            <LinearLayout style="@style/main_menu_button_style"
-                android:layout_weight="1"
-                >
+
+            <LinearLayout
+                style="@style/main_menu_button_style"
+                android:layout_weight="1">
+
                 <ImageButton
                     android:id="@+id/reading_list_button"
                     style="@style/main_menu_image_button_style"
                     android:src="@drawable/ic_baseline_menu_book_24" />
+
                 <TextView
                     android:layout_width="@dimen/main_menu_image_button_dimen"
                     style="@style/main_menu_button_text_view_style"
-                    android:text="@string/reading_list"
-                    />
+                    android:text="@string/reading_list" />
             </LinearLayout>
-            <LinearLayout style="@style/main_menu_button_style"
+
+            <LinearLayout
+                style="@style/main_menu_button_style"
                 android:layout_weight="1">
+
                 <ImageButton
                     android:id="@+id/self_help_video_button"
                     style="@style/main_menu_image_button_style"
                     android:src="@drawable/ic_baseline_ondemand_video_24" />
+
                 <TextView
                     style="@style/main_menu_button_text_view_style"
                     android:layout_width="@dimen/main_menu_image_button_dimen"
@@ -114,8 +129,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/meet_the_dev_button" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,13 +1,12 @@
 package com.example.easyselfhelp.ReadingPackage
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.easyselfhelp.databinding.FragmentReadingListBinding
-import androidx.lifecycle.Observer
 
 
 class ReadingListFragment : Fragment() {
@@ -21,12 +20,13 @@ class ReadingListFragment : Fragment() {
         _binding = FragmentReadingListBinding.inflate(inflater, container, false)
         val rootview = binding.root
         viewModel.getBooks()
-        viewModel.response.observe(viewLifecycleOwner, Observer { booklist ->
+        viewModel.response.observe(viewLifecycleOwner) { booklist ->
             val adapter = BookAdapter(booklist)
             binding.bookRecyclerView.adapter = adapter
-        })
+        }
         return rootview
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

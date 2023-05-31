@@ -32,5 +32,4 @@
         app:layout_constraintTop_toBottomOf="@+id/homework_delete_acknowledge_button" />
 
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,10 @@
 package com.example.easyselfhelp.HomeworkItemPackage
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.example.easyselfhelp.databinding.FragmentHomeworkItemDeleteBinding
@@ -15,7 +15,7 @@ import com.google.firebase.ktx.Firebase
 class HomeworkItemDeleteFragment : Fragment() {
     private var _binding: FragmentHomeworkItemDeleteBinding? = null
     private val viewModel: HomeworkItemViewModel by activityViewModels()
-    lateinit var dbRef: DatabaseReference
+    private lateinit var dbRef: DatabaseReference
     val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,11 +33,12 @@ class HomeworkItemDeleteFragment : Fragment() {
         }
         binding.homeworkItemDropTables.setOnClickListener {
             binding.homeworkItemDeleteViewTitleView.text = "ALL HOMEWORK ITEMS ARE NOW CLEARED"
-         dbRef.child("HomeworkItem").removeValue()
-         viewModel.dropTables()
+            dbRef.child("HomeworkItem").removeValue()
+            viewModel.dropTables()
         }
         return rootview
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

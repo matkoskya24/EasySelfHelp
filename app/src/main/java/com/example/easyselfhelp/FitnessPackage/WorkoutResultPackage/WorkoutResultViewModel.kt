@@ -9,40 +9,31 @@ class WorkoutResultViewModel : ViewModel() {
     )
     private var redFlagIDs: MutableList<Int> = mutableListOf(-1)
     val workoutResultList get() = _workoutResultList
-    fun syncList(list: MutableList<WorkoutResult>){
+    fun syncList(list: MutableList<WorkoutResult>) {
         var counter = 0
-        while(counter < list.size){
-            if(checkForRedFlags(list[counter].workoutID)){
+        while (counter < list.size) {
+            if (checkForRedFlags(list[counter].workoutID)) {
                 list.removeAt(counter)
             }
             counter++
         }
         _workoutResultList.value = list
     }
-    fun checkForRedFlags(id: Int): Boolean{
-        for(int in redFlagIDs){
-            if(id == int){
+
+    private fun checkForRedFlags(id: Int): Boolean {
+        for (int in redFlagIDs) {
+            if (id == int) {
                 return true
             }
         }
         return false
     }
-    fun removeFromList(id: Int){
-        var counter = 0
-        while(counter < _workoutResultList.value?.size ?: 0){
-            if(_workoutResultList.value?.get(counter)?.workoutID ?: -1 == id){
-                _workoutResultList.value?.removeAt(counter)
-            }
-            counter++
-        }
-    }
-    fun addRedFlag(id:Int){
-        redFlagIDs.add(id)
-    }
-    fun dropTables(){
+
+    fun dropTables() {
         _workoutResultList.value = mutableListOf()
         redFlagIDs = mutableListOf()
     }
+
     fun generateNewID(): Int {
         var randId: Int = kotlin.random.Random.nextInt()
         while (randId == -1 || checkForDups(randId)) {
@@ -50,9 +41,10 @@ class WorkoutResultViewModel : ViewModel() {
         }
         return randId
     }
-    private fun checkForDups(id: Int): Boolean{
+
+    private fun checkForDups(id: Int): Boolean {
         var counter = 0
-        while(counter < _workoutResultList.value?.size ?: 0){
+        while (counter < (_workoutResultList.value?.size ?: 0)) {
             if (_workoutResultList.value?.get(counter)?.workoutID == id) {
                 return true
             }

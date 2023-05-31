@@ -25,7 +25,7 @@ class AddBudgetItemFragment : Fragment() {
             val name = binding.itemNameEditText.text.toString()
             val category = binding.budgetCategoryEditText.text.toString()
             val amountString = binding.budgetAmountEditText.text.toString()
-            if(name != "" && amountString != "") {
+            if (name != "" && amountString != "") {
                 val amount = amountString.toDouble()
                 val resultBundle: Bundle = bundleOf()
                 resultBundle.putString("budgetItemName", name)
@@ -33,14 +33,15 @@ class AddBudgetItemFragment : Fragment() {
                 resultBundle.putDouble("budgetItemAmount", amount)
                 setFragmentResult("requestKey", bundleOf("bundleKey" to resultBundle))
                 rootView.findNavController().navigateUp()
-            }else if(name == ""){
+            } else if (name == "") {
                 Toast.makeText(activity, "Enter Budget Item Name", Toast.LENGTH_LONG).show()
-            }else if(amountString == ""){
+            } else if (amountString == "") {
                 Toast.makeText(activity, "Enter Budget Amount", Toast.LENGTH_LONG).show()
             }
         }
         return rootView
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

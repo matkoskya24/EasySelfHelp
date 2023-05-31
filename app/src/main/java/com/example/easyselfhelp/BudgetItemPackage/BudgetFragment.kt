@@ -2,10 +2,10 @@ package com.example.easyselfhelp.BudgetItemPackage
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.findNavController
@@ -20,7 +20,7 @@ import com.google.firebase.ktx.Firebase
 class BudgetFragment : Fragment() {
     private var _binding: FragmentBudgetFragmentBinding? = null
     val binding get() = _binding!!
-    lateinit var dbRef: DatabaseReference
+    private lateinit var dbRef: DatabaseReference
     private val viewModel: BudgetViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,19 +37,20 @@ class BudgetFragment : Fragment() {
                 var numOfItemsAdded = 0
                 for (singleBudgetItemEntry in allDBentries) {
                     numOfItemsAdded++
-                    val name = singleBudgetItemEntry.child("name").getValue().toString()
-                    val category = singleBudgetItemEntry.child("category").getValue().toString()
+                    val name = singleBudgetItemEntry.child("name").value.toString()
+                    val category = singleBudgetItemEntry.child("category").value.toString()
                     val amount =
-                        singleBudgetItemEntry.child("amount").getValue().toString().toDouble()
+                        singleBudgetItemEntry.child("amount").value.toString().toDouble()
                     val isCompleted =
-                        singleBudgetItemEntry.child("isCompleted").getValue().toString()
-                            ?.toBoolean()
-                    val id = singleBudgetItemEntry.child("budgetID").getValue().toString().toInt()
-                    val newBudgetItem = BudgetItem(name, category, amount, isCompleted ?: false, id)
+                        singleBudgetItemEntry.child("isCompleted").value.toString()
+                            .toBoolean()
+                    val id = singleBudgetItemEntry.child("budgetID").value.toString().toInt()
+                    val newBudgetItem = BudgetItem(name, category, amount, isCompleted, id)
                     viewModel.addToList(newBudgetItem)
                     myAdapter.notifyDataSetChanged()
                 }
             }
+
             override fun onCancelled(error: DatabaseError) {
                 Log.w("MainFragment", "Failed to read value.", error.toException())
             }
@@ -61,14 +62,14 @@ class BudgetFragment : Fragment() {
         }
         setFragmentResultListener("requestKey")
         { requestKey, bundle ->
-            var newBudgetItemBundle: Bundle? = bundle.getBundle("bundleKey")
+            val newBudgetItemBundle: Bundle? = bundle.getBundle("bundleKey")
             val name = newBudgetItemBundle?.getString("budgetItemName")
             val category = newBudgetItemBundle?.getString("budgetItemCategory")
             val amount = newBudgetItemBundle?.getDouble("budgetItemAmount")
             val budgetID = viewModel.generateNewID()
             val newBudgetItem = BudgetItem(
                 name.toString(), category.toString(),
-                amount?.toDouble() ?: 0.0, false, budgetID
+                amount ?: 0.0, false, budgetID
             )
             dbRef.child("BudgetItem").child(budgetID.toString()).setValue(newBudgetItem)
             viewModel.addToList(newBudgetItem)

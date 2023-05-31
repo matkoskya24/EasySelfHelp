@@ -50,10 +50,11 @@
             app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
             <Spinner
                 android:id="@+id/month_spinner"
-                style="@style/homework_spinner_style"
-                />
+                style="@style/homework_spinner_style" />
+
             <TextView
                 style="@style/homework_date_text_view_style"
                 android:text="@string/month" />
@@ -69,8 +70,7 @@
 
             <Spinner
                 android:id="@+id/day_spinner"
-                style="@style/homework_spinner_style"
-                />
+                style="@style/homework_spinner_style" />
 
             <TextView
                 style="@style/homework_date_text_view_style"
@@ -153,7 +153,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
         app:layout_constraintHorizontal_bias="0.5" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

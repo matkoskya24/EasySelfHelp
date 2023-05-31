@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/money_green">
+
     <ImageView
         android:id="@+id/imageView3"
         style="@style/recycler_view_image_view"
@@ -21,6 +22,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Budget Item" />
+
     <TextView
         android:id="@+id/budget_category_text_view"
         style="@style/recycler_sub1_view_style"
@@ -28,12 +30,14 @@
         app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/budget_name_text_view"
         tools:text="Category: category" />
+
     <TextView
         android:id="@+id/budget_amount_text_view"
         style="@style/recycler_sub2_view_style"
         app:layout_constraintStart_toStartOf="@+id/budget_category_text_view"
         app:layout_constraintTop_toBottomOf="@+id/budget_category_text_view"
         tools:text="Amount: $00000.00" />
+
     <ImageButton
         android:id="@+id/budget_delete_button"
         style="@style/delete_button_style"
@@ -42,6 +46,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <View
         style="@style/recycler_view_separator"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -31,6 +31,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/homework_name_view_recycler"
         tools:text="Due Date: 00-00-0000" />
+
     <TextView
         android:id="@+id/highPriorityView"
         style="@style/recycler_sub2_view_style"
@@ -49,13 +50,12 @@
         android:backgroundTint="@color/space_cadet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
     <View
         style="@style/recycler_view_separator"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-
-        
 
 </androidx.constraintlayout.widget.ConstraintLayout>

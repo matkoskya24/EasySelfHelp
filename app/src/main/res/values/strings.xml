@@ -6,16 +6,12 @@
     <string name="easy_budget">Easy \nBudget</string>
     <string name="homework_planner">Homework \nPlanner</string>
     <string name="fitness_tracker">Fitness \nTracker</string>
-    <string name="positive_quotes">Positive \nQuotes</string>
     <string name="reading_list">Reading \nList</string>
     <string name="self_help_videos">Self-Help Videos</string>
     <string name="nothing_good_ever_comes_easily">Nothing Good Ever Comes Easily</string>
     <string name="meet_the_developer">Meet The Developer</string>
     <string name="add_budget_item">Add Budget Item</string>
-    <string name="fitness_menu">Fitness Menu</string>
     <string name="add_homework">Add Homework Item</string>
-    <string name="track_your_progress">Track Your Progress</string>
-    <string name="create_workout">Create Workout</string>
     <string name="add_new_budget_item">Add New Budget Item</string>
     <string name="enter_item_name_hint">Enter Item Name</string>
     <string name="enter_amount_hint">Enter Amount</string>
@@ -39,8 +35,6 @@
     <string name="homework_item_successfully_deleted">Homework Item Successfully Deleted!</string>
     <string name="clear_all_budget_items">CLEAR ALL BUDGET ITEMS</string>
     <string name="clear_all_homework_items">CLEAR ALL HOMEWORK ITEMS</string>
-    <string name="quotes_title">Some Quotes to Brighten Your Day</string>
-    <string name="create_new_workout">Create New Workout</string>
     <string name="book_rec">Positive Book Recommendations</string>
     <string name="good_job_keep_going">Good Job!! Keep Going!!!</string>
     <string name="add_workout_result">Add Workout Result</string>
@@ -54,6 +48,10 @@
     <string name="are_you_sure_you_want_to_clear_all_workout_results">ARE YOU SURE YOU WANT TO CLEAR ALL WORKOUT RESULTS?</string>
     <string name="go_back">GO BACK</string>
     <string name="dev_blurb">Aidan Matkosky is an amateur programmer, photographer, musician, rail enthusiast, and actor from Scranton, PA. As the \'therapist\' of his friend group, Aidan enjoys seeing his work help others succeed, which is why he chose to create this app.</string>
+    <string name="mins">Mins</string>
+    <string name="secs">Secs</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="your_workout_results">Your Workout Results</string>
     <string-array name="spinner_30_day">
         <item>1</item>
         <item>2</item>

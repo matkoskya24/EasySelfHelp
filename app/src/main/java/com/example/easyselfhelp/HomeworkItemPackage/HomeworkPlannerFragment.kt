@@ -2,22 +2,24 @@ package com.example.easyselfhelp.HomeworkItemPackage
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.example.easyselfhelp.databinding.FragmentHomeworkPlannerFragmentBinding
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.*
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class homework_planner_fragment : Fragment() {
     private var _binding: FragmentHomeworkPlannerFragmentBinding? = null
     val binding get() = _binding!!
-    lateinit var dbRef: DatabaseReference
+    private lateinit var dbRef: DatabaseReference
     private val viewModel: HomeworkItemViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,23 +41,23 @@ class homework_planner_fragment : Fragment() {
         }
         dbRef.child("HomeworkItem").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val listFromDB : MutableList<HomeworkItem> = mutableListOf()
+                val listFromDB: MutableList<HomeworkItem> = mutableListOf()
                 val allDBentries = snapshot.children
                 var numOfHomeworkItemsAdded = 0
                 for (singleHomeworkItemEntry in allDBentries) {
                     numOfHomeworkItemsAdded++
                     val assignmentName =
-                        singleHomeworkItemEntry.child("assignmentName").getValue().toString()
+                        singleHomeworkItemEntry.child("assignmentName").value.toString()
                     val assignmentDueDate =
-                        singleHomeworkItemEntry.child("assignmentDueDate").getValue().toString()
+                        singleHomeworkItemEntry.child("assignmentDueDate").value.toString()
                     val highPriority =
-                        singleHomeworkItemEntry.child("highPriority").getValue().toString()
+                        singleHomeworkItemEntry.child("highPriority").value.toString()
                             .toBoolean()
                     val isCompleted =
-                        singleHomeworkItemEntry.child("isCompleted").getValue().toString()
+                        singleHomeworkItemEntry.child("isCompleted").value.toString()
                             .toBoolean()
                     val id =
-                        singleHomeworkItemEntry.child("assignmentID").getValue().toString().toInt()
+                        singleHomeworkItemEntry.child("assignmentID").value.toString().toInt()
                     val newHomeworkItem = HomeworkItem(
                         assignmentName,
                         assignmentDueDate,

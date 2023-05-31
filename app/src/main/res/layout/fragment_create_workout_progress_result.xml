@@ -71,6 +71,7 @@
                 android:text="@string/hours"
                 android:textSize="@dimen/main_menu_button_text_size" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/minutes_layout_result"
             style="@style/homework_date_layout_style"
@@ -85,7 +86,7 @@
 
             <TextView
                 style="@style/workout_result_duration_text_view_style"
-                android:text="Mins"
+                android:text="@string/mins"
                 android:textSize="@dimen/main_menu_button_text_size" />
         </LinearLayout>
 
@@ -103,7 +104,7 @@
 
             <TextView
                 style="@style/workout_result_duration_text_view_style"
-                android:text="Secs"
+                android:text="@string/secs"
                 android:textSize="@dimen/main_menu_button_text_size" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

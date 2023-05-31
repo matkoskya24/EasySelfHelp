@@ -4,9 +4,10 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.easyselfhelp.databinding.BudgetItemLayoutBinding
 
-class BudgetViewHolder(val binding:BudgetItemLayoutBinding ): RecyclerView.ViewHolder(binding.root) {
+class BudgetViewHolder(val binding: BudgetItemLayoutBinding) :
+    RecyclerView.ViewHolder(binding.root) {
     private lateinit var currentBudgetItem: BudgetItem
-    fun bindBudgetItem(budgetItem: BudgetItem){
+    fun bindBudgetItem(budgetItem: BudgetItem) {
         currentBudgetItem = budgetItem
         if (!currentBudgetItem.isCompleted) {
             binding.budgetNameTextView.text = currentBudgetItem.name
@@ -14,11 +15,14 @@ class BudgetViewHolder(val binding:BudgetItemLayoutBinding ): RecyclerView.ViewH
             binding.budgetAmountTextView.text = "Amount: $%.2f".format(currentBudgetItem.amount)
         }
     }
+
     init {
-        binding.budgetDeleteButton.setOnClickListener{
+        binding.budgetDeleteButton.setOnClickListener {
             currentBudgetItem.isCompleted = true
             bindBudgetItem(currentBudgetItem)
-            val action = BudgetFragmentDirections.actionBudgetFragmentToBudgetItemDeleteFragment(currentBudgetItem.budgetID)
+            val action = BudgetFragmentDirections.actionBudgetFragmentToBudgetItemDeleteFragment(
+                currentBudgetItem.budgetID
+            )
             binding.root.findNavController().navigate(action)
         }
     }

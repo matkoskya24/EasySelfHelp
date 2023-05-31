@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="layout_style" parent="TextAppearance.AppCompat">
         <item name="android:background">@color/desert_sand</item>
         <item name="android:padding">@dimen/universal_padding</item>
@@ -7,6 +8,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:orientation">vertical</item>
     </style>
+
     <style name="title_view_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -16,6 +18,7 @@
         <item name="fontFamily">@font/sunshiney</item>
         <item name="android:textStyle">bold</item>
     </style>
+
     <style name="text_view_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -24,27 +27,32 @@
         <item name="android:textColor">@color/orchid</item>
         <item name="fontFamily">@font/sunshiney</item>
     </style>
+
     <style name="button_view_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/universal_text_size</item>
     </style>
+
     <style name="main_menu_row_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:orientation">horizontal</item>
     </style>
+
     <style name="main_menu_button_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:orientation">vertical</item>
         <item name="android:layout_margin">@dimen/main_menu_button_margin</item>
     </style>
+
     <style name="main_menu_image_button_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_height">@dimen/main_menu_image_button_dimen</item>
         <item name="android:layout_width">@dimen/main_menu_image_button_dimen</item>
         <item name="android:backgroundTint">@color/desert_sand</item>
     </style>
+
     <style name="main_menu_button_text_view_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -54,23 +62,27 @@
         <item name="android:textAlignment">center</item>
         <item name="android:textColor">@color/space_cadet</item>
     </style>
+
     <style name="recycler_view_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_height">0dp</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_marginBottom">@dimen/recycler_view_margin_bottom</item>
     </style>
+
     <style name="add_item_text_view" parent="TextAppearance.AppCompat">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:textSize">@dimen/add_item_text_view_text_size</item>
         <item name="fontFamily">@font/baloo</item>
     </style>
+
     <style name="add_item_image_button" parent="TextAppearance.AppCompat">
         <item name="android:layout_height">@dimen/recycler_view_margin_bottom</item>
         <item name="android:layout_width">@dimen/recycler_view_margin_bottom</item>
         <item name="android:backgroundTint">@color/desert_sand</item>
         <item name="android:src">@drawable/add_item_image_asset</item>
     </style>
+
     <style name="recycler_title_view_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -79,6 +91,7 @@
         <item name="android:textSize">@dimen/universal_text_size</item>
         <item name="android:textColor">@color/gold</item>
     </style>
+
     <style name="recycler_sub1_view_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -87,6 +100,7 @@
         <item name="android:textSize">@dimen/recycler_text_size_one</item>
         <item name="android:textColor">@color/gold</item>
     </style>
+
     <style name="recycler_sub2_view_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -95,21 +109,25 @@
         <item name="android:textSize">@dimen/recycler_text_size_two</item>
         <item name="android:textColor">@color/gold</item>
     </style>
+
     <style name="recycler_view_image_view" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">@dimen/main_menu_image_button_dimen</item>
         <item name="android:layout_height">@dimen/main_menu_image_button_dimen</item>
     </style>
+
     <style name="edit_text_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_height">@dimen/edit_text_height</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:background">@color/grey</item>
         <item name="android:textSize">@dimen/recycler_text_size_one</item>
     </style>
+
     <style name="delete_button_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">@dimen/delete_button_dimen</item>
         <item name="android:layout_height">@dimen/delete_button_dimen</item>
         <item name="android:src">@drawable/ic_baseline_delete_forever_24</item>
     </style>
+
     <style name="radio_button_style_homework" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">match_parent</item>
@@ -118,6 +136,7 @@
         <item name="android:fontFamily">@font/adamina</item>
         <item name="android:layout_marginLeft">@dimen/main_menu_image_button_dimen</item>
     </style>
+
     <style name="homework_date_edit_text_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">@dimen/delete_button_dimen</item>
         <item name="android:layout_height">@dimen/delete_button_dimen</item>
@@ -127,6 +146,7 @@
         <item name="android:textSize">@dimen/recycler_text_size_one</item>
         <item name="android:inputType">number</item>
     </style>
+
     <style name="homework_date_text_view_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
@@ -137,6 +157,7 @@
         <item name="android:textColor">@color/gold</item>
         <item name="android:textSize">@dimen/main_menu_button_text_size</item>
     </style>
+
     <style name="homework_date_layout_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -144,11 +165,13 @@
         <item name="android:orientation">vertical</item>
         <item name="android:background">@color/grey</item>
     </style>
+
     <style name="homework_constraint_layout_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">@dimen/main_menu_button_margin</item>
     </style>
+
     <style name="submit_button_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/submit_button_height</item>
@@ -156,6 +179,7 @@
         <item name="android:fontFamily">@font/adamina</item>
         <item name="android:textSize">@dimen/recycler_text_size_one</item>
     </style>
+
     <style name="delete_title_view_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -164,6 +188,7 @@
         <item name="android:textSize">@dimen/add_item_text_view_text_size</item>
         <item name="android:textColor">@color/gold</item>
     </style>
+
     <style name="acknowledge_button_view_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -173,16 +198,19 @@
         <item name="android:text">@string/ok</item>
         <item name="android:textSize">@dimen/universal_text_size</item>
     </style>
+
     <style name="homework_spinner_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">@dimen/main_menu_image_button_dimen</item>
         <item name="android:layout_height">@dimen/delete_button_dimen</item>
         <item name="android:backgroundTint">@color/black</item>
     </style>
+
     <style name="recycler_view_separator" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/recycler_view_separator_height</item>
         <item name="android:background">@color/gold</item>
     </style>
+
     <style name="progress_view_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">@dimen/recycler_view_margin_bottom</item>
         <item name="android:layout_height">@dimen/main_menu_button_margin</item>
@@ -192,6 +220,7 @@
         <item name="android:textSize">@dimen/main_menu_button_text_size</item>
         <item name="android:layout_marginTop">@dimen/recycler_view_separator_height</item>
     </style>
+
     <style name="workout_result_duration_text_view_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>

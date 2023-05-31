@@ -8,14 +8,14 @@ class HomeworkItemViewModel : ViewModel() {
     private val _assignmentList: MutableLiveData<MutableList<HomeworkItem>> =
         MutableLiveData(mutableListOf())
 
-     private var redFlagIDs: MutableList<Int> = mutableListOf()
+    private var redFlagIDs: MutableList<Int> = mutableListOf()
     val assignmentList: LiveData<MutableList<HomeworkItem>>
         get() = _assignmentList
 
     fun syncList(list: MutableList<HomeworkItem>) {
         var counter = 0
-        while(counter < list.size){
-            if(checkForRedFlag(list[counter].assignmentID) || list[counter].isCompleted){
+        while (counter < list.size) {
+            if (checkForRedFlag(list[counter].assignmentID) || list[counter].isCompleted) {
                 list.removeAt(counter)
             }
             counter++
@@ -44,14 +44,15 @@ class HomeworkItemViewModel : ViewModel() {
 
     fun removeFromList(id: Int) {
         var counter = 0
-        while (counter < _assignmentList.value?.size ?: 0) {
+        while (counter < (_assignmentList.value?.size ?: 0)) {
             if (_assignmentList.value?.get(counter)?.assignmentID == id) {
                 _assignmentList.value?.removeAt(counter)
             }
             counter++
         }
     }
-    fun checkForRedFlag(id: Int): Boolean {
+
+    private fun checkForRedFlag(id: Int): Boolean {
         for (Int in redFlagIDs) {
             if (id == Int) {
                 return true
@@ -59,9 +60,10 @@ class HomeworkItemViewModel : ViewModel() {
         }
         return false
     }
-    private fun checkForDups(id: Int): Boolean{
+
+    private fun checkForDups(id: Int): Boolean {
         var counter = 0
-        while(counter < _assignmentList.value?.size ?: 0){
+        while (counter < (_assignmentList.value?.size ?: 0)) {
             if (_assignmentList.value?.get(counter)?.assignmentID == id) {
                 return true
             }

@@ -16,11 +16,13 @@ private val retrofit = Retrofit.Builder()
     .addConverterFactory(MoshiConverterFactory.create(moshi))
     .baseUrl(BASE_URL)
     .build()
+
 interface bookAPIService {
     @GET(QUERY_STRING)
     fun getBooks(): Call<GoogleBooksResponse>
 }
-object bookAPI{
+
+object bookAPI {
     val book: bookAPIService by lazy {
         retrofit.create(bookAPIService::class.java)
     }
