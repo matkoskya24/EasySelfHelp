@@ -49,7 +49,9 @@
         style="@style/delete_button_style"
         android:backgroundTint="@color/space_cadet"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <View
         style="@style/recycler_view_separator"
